@@ -1,0 +1,50 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                             Using CPAN
+          
+          * perldoc cpan
+          * command line client: cpan
+          * usually:
+            * cpan> install Foo::Bar
+            * cpan> i/FooBar/           # (find a module)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

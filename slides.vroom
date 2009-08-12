@@ -1,0 +1,88 @@
+---- config
+# These are YAML settings for Vroom
+title: "CPAN::Awesomeness"
+height: 50
+width: 100
+# skip: 12      # Skip 12 slides. Useful when making slides.
+---- center
+CPAN::Awesomeness
+
+by Jeff Lavallee
+----
+== What we'll cover
+* CPAN setup
+* advanced CPAN Setup
+* CPAN::Mini
+* CPAN::Reporter
+* CPAN::Reporter::Smoker
+
+----
+== What is the CPAN?
+
+* CPAN - Comprehensive Perl Archive Network
++* a *lot* of modules
++* 16292 modules as of 8/11/2009
++* chances are, there's a module that can help you accomplish your task
++* one of the great strengths of Perl
+
+----
+== CPAN Setup
+
+* The first time you run cpan, it will prompt for a lot of information
+* Hopefully most of it is pretty self-explanitory
+* My recommendations:
++* follow prerequisits
++* auto commit config changes
++* 
+
+----
+== Using CPAN
+
+* perldoc cpan
+* command line client: cpan
+* usually:
+  * cpan> install Foo::Bar
+  * cpan> i/FooBar/           # (find a module)
+
+----
+== Making it better
+
+* install Bundle::CPAN
+* lots of new functionality added
++* command history
++* more configurable
+
+----
+== 
+
+*  cpan[1]> o conf auto_commit                                                               
+      auto_commit        [0]
+  Type 'o conf' to view all configuration items
+
+
++*  cpan[3]> o conf auto_commit 1                                                             
+       auto_commit        [1]
+
+
+
+
+
+----
+== CPAN is Great!
+
+* I'm using CPAN all time.  I love it!
++* Except when I'm on an airplane
++ or a boat
+I know I'm on an airplane/boat/unwilling to pay for wifi.
+
+
+
+
+---- perl,i10
+# Perl code indented 10 spaces
+use Vroom::Vroom;
+
+print "Hello World";
+---- center
+THE END
+
