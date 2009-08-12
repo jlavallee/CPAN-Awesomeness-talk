@@ -15,19 +15,19 @@
             * don't worry if you're missing some of the programs it's looking for
             * generally cpan will work file without them (I.E. ncftpget)
           
-
-
-
-
-
-
-
-
-
-
-
-
-
+          * In general, the defaults should be fine
+          
+          * My recommendations:
+          
+          
+            * auto commit config changes
+          
+            * Always commit changes to config variables to disk? [no] yes
+          
+            * follow prerequisits
+          
+            * Policy on building prerequisites (follow, ask or ignore)? [ask] follow
+          
 
 
 

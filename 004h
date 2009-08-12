@@ -32,10 +32,10 @@
           
             * Policy on installing 'build_requires' modules (yes, no, ask/yes, ask/no)? [ask/yes] yes
           
-            * Module::Build as prefered installer 
-          
-            * In case you can choose between running a Makefile.PL or a Build.PL,
-          which installer would you prefer (EUMM or MB or RAND)? [MB] 
+
+
+
+
 
 
 

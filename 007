@@ -17,12 +17,12 @@
 
 
 
-                                                  
+
+                                  Configuration in the CPAN shell
           
-          *  cpan[1]> o conf auto_commit                                                               
+          * cpan[1]> o conf auto_commit                    <---- view a setting
                 auto_commit        [0]
             Type 'o conf' to view all configuration items
-          
           
 
 

@@ -13,10 +13,10 @@
           
           * Hopefully most of it is pretty self-explanitory
             * don't worry if you're missing some of the programs it's looking for
-
-
-
-
+            * generally cpan will work file without them (I.E. ncftpget)
+          
+          * In general, the defaults should be fine
+          
 
 
 

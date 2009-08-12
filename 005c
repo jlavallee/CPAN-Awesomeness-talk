@@ -20,11 +20,11 @@
           * command line client: cpan
           
           * perldoc cpan
-
-
-
-
-
+          * or man cpan
+          
+          * basic usage:
+          * $> cpan Foo::Bar            <---- installs Foo:Bar
+          
 
 
 

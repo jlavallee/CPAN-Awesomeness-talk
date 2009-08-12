@@ -3,7 +3,7 @@
 title: "CPAN::Awesomeness"
 height: 50
 width: 100
-# skip: 12      # Skip 12 slides. Useful when making slides.
+# skip: 20      # Skip 12 slides. Useful when making slides.
 ---- center
 CPAN::Awesomeness
 
@@ -20,29 +20,64 @@ by Jeff Lavallee
 == What is the CPAN?
 
 * CPAN - Comprehensive Perl Archive Network
-+* a *lot* of modules
-+* 16292 modules as of 8/11/2009
-+* chances are, there's a module that can help you accomplish your task
-+* one of the great strengths of Perl
+
++  * a *lot* of modules
+
++  * 16292 modules as of 8/11/2009
+
++  * chances are, there's a module that can help you accomplish your task
+
++  * CPAN is one of the great strengths of Perl
 
 ----
 == CPAN Setup
 
 * The first time you run cpan, it will prompt for a lot of information
+
 * Hopefully most of it is pretty self-explanitory
-* My recommendations:
-+* follow prerequisits
-+* auto commit config changes
-+* 
++  * don't worry if you're missing some of the programs it's looking for
++  * generally cpan will work file without them (I.E. ncftpget)
+
++* In general, the defaults should be fine
+
++* My recommendations:
+
+
++  * auto commit config changes
+
+  * Always commit changes to config variables to disk? [no] yes
+
++  * follow prerequisits
+
+  * Policy on building prerequisites (follow, ask or ignore)? [ask] follow
+
++  * install build_requires: yes (or no, but not ask!)
+
+  * Policy on installing 'build_requires' modules (yes, no, ask/yes, ask/no)? [ask/yes] yes
+
++  * Module::Build as prefered installer 
+
+  * In case you can choose between running a Makefile.PL or a Build.PL,
+which installer would you prefer (EUMM or MB or RAND)? [MB] 
+
 
 ----
 == Using CPAN
 
-* perldoc cpan
+
 * command line client: cpan
+
+* perldoc cpan
++* or man cpan
+
++* basic usage:
+* $> cpan Foo::Bar            <---- installs Foo:Bar
+
++* CPAN shell
++* $> cpan                    <---- start the CPAN.pm shell
 * usually:
-  * cpan> install Foo::Bar
-  * cpan> i/FooBar/           # (find a module)
+  * cpan> install Foo::Bar    <---- installs Foo::Bar
+  * cpan> i/FooBar/           <---- search for a module with "FooBar" in its name
 
 ----
 == Making it better
@@ -51,19 +86,32 @@ by Jeff Lavallee
 * lots of new functionality added
 +* command history
 +* more configurable
++* fancy colors
+
++* the older your perl, the happier Bundle::CPAN will make you!
 
 ----
-== 
+== Configuration in the CPAN shell
 
-*  cpan[1]> o conf auto_commit                                                               
+* cpan[1]> o conf auto_commit                    <---- view a setting
       auto_commit        [0]
   Type 'o conf' to view all configuration items
 
-
-+*  cpan[3]> o conf auto_commit 1                                                             
++* cpan[3]> o conf auto_commit 1                 <---- change a setting
        auto_commit        [1]
 
+----
+== More configuration 
 
++* never run cpan as root again!
+
++* cpan[4]> o conf make_install_make_command "sudo /usr/bin/make"                            
+    make_install_make_command [sudo /usr/bin/make]
+commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
+
++* cpan[5]> o conf mbuild_install_build_command "sudo ./Build"                               
+    mbuild_install_build_command [sudo ./Build]
+commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
 
 
 
@@ -71,9 +119,273 @@ by Jeff Lavallee
 == CPAN is Great!
 
 * I'm using CPAN all time.  I love it!
-+* Except when I'm on an airplane
-+ or a boat
-I know I'm on an airplane/boat/unwilling to pay for wifi.
++  * Except when I'm on an airplane
++  * or a boat
++  * or to cheap to pay for wifi
+
+----
+== CPAN::Mini to the rescue!
+
+* What is CPAN::Mini?
++  * creates a minimal mirror of CPAN
+
++  * only the files needed to install the newest version of every CPAN distribution: 
+
++  * index files:
+    *   01mailrc.txt.gz
+    *   02packages.details.txt.gz
+    *   03modlist.data.gz
+
++  * module files:
+    *   the last non-developer release of every dist for every author
+
++  * that must be huge!
++  * it's not *that* big - mine is currently 1.1G
++  * besides, disks are cheap!
+
++  * bonus: cpan installs are a lot faster
+
+----
+== CPAN::Mini setup
+
+jeff@pokey:~ $ cat ~/.minicpanrc 
+local: ~/Sites/CPAN/
+remote: http://cpan.hexten.net/
+class: CPAN::Mini
+also_mirror: indices/find-ls.gz indices/ls-lR.gz
+
+---- crontab,i10
+== CPAN::Mini crontab
+
+# m h dom mon dow command
+20  1   *   *   *   /usr/local/bin/minicpan 
+
+
++ * or mirror development versions:
+
+# m h dom mon dow command
+20  1   *   *   *   /usr/local/bin/minicpan -c CPAN::Mini::Devel 
+
+
+----
+== Sweet Emailz!
+
+    From:   jeff@zeroclue.com
+    Subject:    Cron <jeff@pokey> /usr/local/bin/minicpan 
+    Date:   July 27, 2009 1:20:02 AM PDT
+    To:     jeff@zeroclue.com
+
+    indices/find-ls.gz ... updated
+    authors/01mailrc.txt.gz ... updated
+    modules/02packages.details.txt.gz ... updated
+    modules/03modlist.data.gz ... up to date
+    indices/find-ls.gz ... updated
+    indices/ls-lR.gz ... updated
+    Scanning 02packages.details ...
+    CPAN: File::Which loaded ok (v0.05)
+    Scanning find-ls ...
+    authors/id/A/AG/AGRUNDMA/Audio-Scan-0.27.tar.gz ... updated
+    authors/id/A/AG/AGRUNDMA/CHECKSUMS ... updated
+    authors/id/B/BA/BAYASHI/WWW-Tube8-1.0.1.tar.gz ... updated
+    authors/id/B/BA/BAYASHI/CHECKSUMS ... updated
+
+---- 
+== Teach cpan about CPAN::Mini
+
+Our mirror won't do us much good unless we use it:
+
+    --- /home/jeff/.cpan/CPAN/MyConfig.pm.a Tue Aug 11 21:41:21 2009
+    +++ /home/jeff/.cpan/CPAN/MyConfig.pm   Tue Aug 11 21:41:49 2009
+    @@ -62,3 +62,3 @@
+       'unzip' => q[/usr/local/bin/unzip],
+    -  'urllist' => [q[http://localhost/~jeff/CPAN/], q[ftp://cpan.hexten.net/], q[ftp://cpan.pair.com/pub/CPAN/]],
+    +  'urllist' => [q[ftp://cpan.hexten.net/], q[ftp://cpan.pair.com/pub/CPAN/]],
+       'use_sqlite' => q[1],
+
+---- center
+
+Sweet!  What's next?
+
+----
+== Give something back
+
+* Spend 10 minutes and give something back 
+  to CPAN every time you install a module
+
++* How?
+
++* setup CPAN::Reporter
+
++* send CPAN Test reports every time you install a module!
+
++* see http://cpantesters.org/
+
+---- 
+== CPAN::Reporter setup
+
+cpan[1]> o conf test_report 1                                                             
+    test_report        [1]
+commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
+
+
+jeff@pokey:~ $ cat ~/.cpanreporter/config.ini
+cc_author=no
+edit_report=default:ask/no pass/na:no
+email_from=jeff@zeroclue.com
+send_report=default:ask/yes pass/na:yes
+smtp_server=smtp.gmail.com
+transport=Net::SMTP::TLS User jeff@zeroclue.com Password xxxxxxxxx Port 587
+
+----
+== CPAN::Reporter setup - detail
+
+* cc_author=no
+
+  * Don't cc authors - some are annoyed by direct emails
+
++* edit_report=default:ask/no pass/na:no
+
+  * if the results are pass or N/A, don't ask to edit
+  * otherwise (failure), ask and default to "no edit"
+
++* email_from=jeff@zeroclue.com
+
++* send_report=default:ask/yes pass/na:yes
+
+  * if the results are pass or N/A, don't ask - just send
+  * otherwise, ask and default to "yes (send)"
+
++* smtp_server=smtp.gmail.com
+
++* transport=Net::SMTP::TLS User jeff@zeroclue.com Password xxxxxxxxx Port 587
+
+  * use Net::SMTP::TLS, because google's SMTP servers require authentication
+  * specify my username, password, and the port to use
+
+----
+== CPAN::Reporter in action!
+
+cpan[1]> install Acme::Bleach                                                             
+CPAN: CPAN::SQLite loaded ok (v0.197)
+...
+Running make for D/DC/DCONWAY/Acme-Bleach-1.12.tar.gz
+CPAN: LWP::UserAgent loaded ok (v5.826)
+Fetching with LWP:
+  http://localhost/~jeff/CPAN/authors/id/D/DC/DCONWAY/Acme-Bleach-1.12.tar.gz
+CPAN: Digest::SHA loaded ok (v5.45)
+...
+
+  CPAN.pm: Going to build D/DC/DCONWAY/Acme-Bleach-1.12.tar.gz
+
+CPAN: CPAN::Reporter loaded ok (v1.1705)
+Checking if your kit is complete...
+Looks good
+...
+
+----
+== CPAN::Reporter in action!
+...
+Writing Makefile for Acme::Bleach
+(/usr/local/bin/perl Makefile.PL exited with 0)
+CPAN::Reporter: Makefile.PL result is 'pass', No errors.
+cp lib/Acme/Bleach.pm blib/lib/Acme/Bleach.pm
+cp lib/Acme/Morse.pm blib/lib/Acme/Morse.pm
+cp lib/Acme/DWIM.pm blib/lib/Acme/DWIM.pm
+Manifying blib/man3/Acme::Morse.3
+Manifying blib/man3/Acme::Bleach.3
+Manifying blib/man3/Acme::DWIM.3
+(/usr/bin/make exited with 0)
+CPAN::Reporter: make result is 'pass', No errors.
+  DCONWAY/Acme-Bleach-1.12.tar.gz
+  /usr/bin/make -- OK
+Running make test
+PERL_DL_NONLAZY=1 /usr/local/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+t/bleach....ok
+t/DWIM......ok
+t/morse.....ok
+All tests successful.
+...
+
+----
+== CPAN::Reporter in action!
+...
+Files=3, Tests=30,  0 wallclock secs ( 0.03 usr  0.01 sys +  0.02 cusr  0.01 csys =  0.07 CPU)
+Result: PASS
+(/usr/bin/make test exited with 0)
+CPAN::Reporter: Test result is 'pass', All tests successful.
+CPAN::Reporter: preparing a CPAN Testers report for Acme-Bleach-1.12
+CPAN::Reporter: sending test report with 'pass' to cpan-testers@perl.org
+  DCONWAY/Acme-Bleach-1.12.tar.gz
+  /usr/bin/make test -- OK
+Running make install
+Prepending /Users/jeff/.cpan/build/Acme-Bleach-1.12-ogVZun/blib/arch /Users/jeff/.cpan/build/Acme-Bleach-1.12-ogVZun/blib/lib to PERL5LIB for 'install'
+Installing /usr/local/lib/perl5/site_perl/5.10.0/Acme/Bleach.pm
+Installing /usr/local/lib/perl5/site_perl/5.10.0/Acme/DWIM.pm
+Installing /usr/local/lib/perl5/site_perl/5.10.0/Acme/Morse.pm
+Installing /usr/local/share/man/man3/Acme::Bleach.3
+Installing /usr/local/share/man/man3/Acme::DWIM.3
+Installing /usr/local/share/man/man3/Acme::Morse.3
+Appending installation info to /usr/local/lib/perl5/5.10.0/darwin-2level/perllocal.pod
+  DCONWAY/Acme-Bleach-1.12.tar.gz
+  sudo /usr/bin/make install  -- OK
+
+cpan[2]>     
+
+----
+== Awesome!
+
+* we can install CPAN modules w/o running cpan as root
+
++* we're able to install CPAN modules from my local mirror
+
++* we're sending test reports every time we install a CPAN module
+
++* What's next?
+
++* CPAN::Reporter::Smoker!
+
+----
+== CPAN::Reporter::Smoker
+
+* Turnkey CPAN Testers smoking
+
++  * No configuration needed
+
++  * Tests each distribution as a separate CPAN process -- each
+   distribution has prerequisites like build_requires satisfied from
+   scratch
+
++  * Automatically checks for new distributions every twelve hours or as
+   otherwise specified
+
++  * Continues until interrupted with CTRL-C
+
+----
+== CPAN::Reporter::Smoker warning!
+
+   WARNING -- smoke testing is risky
+
+   Smoke testing will download and run programs that other people have
+   uploaded to CPAN.  These programs could do anything to your system,
+   including deleting everything on it.  Do not run CPAN::Reporter::Smoker
+   unless you are prepared to take these risks.
+
+----
+== CPAN::Reporter::Smoker setup
+
+* none!
+
++* that's a lie
+
++  * minimum step: run as a dedicated user
++  * I usually create a user called "smoke" that's certainly not in wheel 
+    or any other priviledged group
+
+----
+== CPAN::Reporter::Smoker tips
+
+* use screen
+
 
 
 

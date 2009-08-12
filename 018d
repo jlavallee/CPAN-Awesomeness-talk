@@ -1,0 +1,50 @@
+
+
+
+
+
+
+
+
+
+
+
+
+                                   CPAN::Reporter setup - detail
+          
+          * cc_author=no
+          
+            * Don't cc authors - some are annoyed by direct emails
+          
+          * edit_report=default:ask/no pass/na:no
+          
+            * if the results are pass or N/A, don't ask to edit
+            * otherwise (failure), ask and default to "no edit"
+          
+          * email_from=jeff@zeroclue.com
+          
+          * send_report=default:ask/yes pass/na:yes
+          
+            * if the results are pass or N/A, don't ask - just send
+            * otherwise, ask and default to "yes (send)"
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
