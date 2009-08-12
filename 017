@@ -16,16 +16,16 @@
 
 
 
+                                        Give something back
+          
+          * Spend 10 minutes and give something back 
+            to CPAN every time you install a module
+          
 
-                                        CPAN::Reporter setup
 
-jeff@pokey:~ $ cat ~/.cpanreporter/config.ini
-cc_author=no
-edit_report=default:ask/no pass/na:no
-email_from=jeff@zeroclue.com
-send_report=default:ask/yes pass/na:yes
-smtp_server=smtp.gmail.com
-transport=Net::SMTP::TLS User jeff@zeroclue.com Password xxxxxxxxx Port 587
+
+
+
 
 
 

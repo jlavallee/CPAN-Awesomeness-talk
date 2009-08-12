@@ -12,16 +12,16 @@
 
 
 
+                                             CPAN Setup
+          
+          * My recommendations:
+          
+            * auto commit config changes
+          
+              Always commit changes to config variables to disk? [no] yes
+          
 
 
-                                             Using CPAN
-          
-          
-          * command line client: cpan
-          
-          * perldoc cpan
-          * or man cpan
-          
 
 
 

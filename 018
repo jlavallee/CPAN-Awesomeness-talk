@@ -10,25 +10,25 @@
 
 
 
-                                   CPAN::Reporter setup - detail
-          
-          * cc_author=no
-          
-            * Don't cc authors - some are annoyed by direct emails
-          
 
 
 
 
 
+                                        CPAN::Reporter setup
+
+cpan[1]> o conf test_report 1                                                             
+    test_report        [1]
+commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
 
 
-
-
-
-
-
-
+jeff@pokey:~ $ cat ~/.cpanreporter/config.ini
+cc_author=no
+edit_report=default:ask/no pass/na:no
+email_from=jeff@zeroclue.com
+send_report=default:ask/yes pass/na:yes
+smtp_server=smtp.gmail.com
+transport=Net::SMTP::TLS User jeff@zeroclue.com Password xxxxxxxxx Port 587
 
 
 

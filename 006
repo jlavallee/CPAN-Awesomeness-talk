@@ -14,13 +14,13 @@
 
 
 
-
-
-
-                                          Making it better
+                                             Using CPAN
           
-          * install Bundle::CPAN
-          * lots of new functionality added
+          * command line client: cpan
+          
+          * perldoc cpan
+
+
 
 
 

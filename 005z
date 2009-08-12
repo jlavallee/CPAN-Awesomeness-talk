@@ -12,26 +12,26 @@
 
 
 
-
-
-                                             Using CPAN
+                                             CPAN Setup
           
+          * My recommendations:
           
-          * command line client: cpan
+            * auto commit config changes
           
-          * perldoc cpan
-          * or man cpan
+              Always commit changes to config variables to disk? [no] yes
           
-          * basic usage:
-          * $> cpan Foo::Bar            <---- installs Foo:Bar
+            * follow prerequisits
           
-          * CPAN shell
-          * $> cpan                    <---- start the CPAN.pm shell
-          * usually:
-            * cpan> install Foo::Bar    <---- installs Foo::Bar
-            * cpan> i/FooBar/           <---- search for a module with "FooBar" in its name
-
-
+              Policy on building prerequisites (follow, ask or ignore)? [ask] follow
+          
+            * install build_requires: yes (or no, but not ask!)
+          
+              Policy on installing 'build_requires' modules (yes, no, ask/yes, ask/no)? [ask/yes] yes
+          
+            * Module::Build as prefered installer 
+          
+              In case you can choose between running a Makefile.PL or a Build.PL,
+          which installer would you prefer (EUMM or MB or RAND)? [MB] 
 
 
 

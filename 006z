@@ -14,21 +14,21 @@
 
 
 
-
-
-
-                                          Making it better
+                                             Using CPAN
           
-          * install Bundle::CPAN
-          * lots of new functionality added
-          * command history
-          * more configurable
-          * fancy colors
+          * command line client: cpan
           
-          * the older your perl, the happier Bundle::CPAN will make you!
-
-
-
+          * perldoc cpan
+          * or man cpan
+          
+          * basic usage:
+          * $> cpan Foo::Bar            <---- installs Foo:Bar
+          
+          * CPAN shell
+          * $> cpan                    <---- start the CPAN.pm shell
+          * usually:
+            * cpan[1]> install Foo::Bar    <---- installs Foo::Bar
+            * cpan[2]> i /FooBar/          <---- search for a module with "FooBar" in its name
 
 
 

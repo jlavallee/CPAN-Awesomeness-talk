@@ -16,17 +16,17 @@
 
 
 
-
-
-
-                                           CPAN is Great!
+                                         More configuration
           
-          * I'm using CPAN all time.  I love it!
-            * Except when I'm on an airplane
-            * or a boat
-            * or to cheap to pay for wifi
-
-
+          * never run cpan as root again!
+          
+            * cpan[4]> o conf make_install_make_command "sudo /usr/bin/make"                            
+              make_install_make_command [sudo /usr/bin/make]
+          commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
+          
+            * cpan[5]> o conf mbuild_install_build_command "sudo ./Build"                               
+              mbuild_install_build_command [sudo ./Build]
+          commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
 
 
 

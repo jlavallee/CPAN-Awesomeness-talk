@@ -1,0 +1,50 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    CPAN::Reporter::Smoker setup
+          
+          * none!
+          
+          * that's a lie
+          
+            * minimum step: run as a dedicated user
+          
+            * I usually create a user called "smoke" that's certainly not in wheel 
+              or any other priviledged group
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

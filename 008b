@@ -15,12 +15,12 @@
 
 
 
-
-                                         More configuration
+                                          Making it better
           
-          * never run cpan as root again!
+          * install Bundle::CPAN
           
-
+          * lots of new functionality added
+          
 
 
 

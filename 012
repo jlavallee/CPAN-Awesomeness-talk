@@ -17,14 +17,14 @@
 
 
 
-                                         CPAN::Mini crontab
-          
-          # m h dom mon dow command
-          20  1   *   *   *   /usr/local/bin/minicpan 
-          
-          
 
+                                          CPAN::Mini setup
 
+jeff@pokey:~ $ cat ~/.minicpanrc 
+local: ~/Sites/CPAN/
+remote: http://cpan.hexten.net/
+class: CPAN::Mini
+also_mirror: indices/find-ls.gz indices/ls-lR.gz
 
 
 

@@ -14,17 +14,17 @@
 
 
 
-
-
-
-                                          Making it better
+                                             Using CPAN
           
-          * install Bundle::CPAN
-          * lots of new functionality added
-          * command history
-          * more configurable
-          * fancy colors
+          * command line client: cpan
           
+          * perldoc cpan
+          * or man cpan
+          
+          * basic usage:
+          * $> cpan Foo::Bar            <---- installs Foo:Bar
+          
+          * CPAN shell
 
 
 

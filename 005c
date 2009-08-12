@@ -12,19 +12,19 @@
 
 
 
+                                             CPAN Setup
+          
+          * My recommendations:
+          
+            * auto commit config changes
+          
+              Always commit changes to config variables to disk? [no] yes
+          
+            * follow prerequisits
+          
+              Policy on building prerequisites (follow, ask or ignore)? [ask] follow
+          
 
-
-                                             Using CPAN
-          
-          
-          * command line client: cpan
-          
-          * perldoc cpan
-          * or man cpan
-          
-          * basic usage:
-          * $> cpan Foo::Bar            <---- installs Foo:Bar
-          
 
 
 

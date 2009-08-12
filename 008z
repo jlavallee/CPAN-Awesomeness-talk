@@ -15,19 +15,19 @@
 
 
 
-
-                                         More configuration
+                                          Making it better
           
-          * never run cpan as root again!
+          * install Bundle::CPAN
           
-          * cpan[4]> o conf make_install_make_command "sudo /usr/bin/make"                            
-              make_install_make_command [sudo /usr/bin/make]
-          commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
+          * lots of new functionality added
           
-          * cpan[5]> o conf mbuild_install_build_command "sudo ./Build"                               
-              mbuild_install_build_command [sudo ./Build]
-          commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
-
+            * command history
+          
+            * more configurable
+          
+            * fancy colors
+          
+          * the older your perl, the happier Bundle::CPAN will make you!
 
 
 

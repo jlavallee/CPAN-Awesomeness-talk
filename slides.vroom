@@ -3,17 +3,22 @@
 title: "CPAN::Awesomeness"
 height: 50
 width: 100
-# skip: 20      # Skip 12 slides. Useful when making slides.
+#skip: 10   
 ---- center
 CPAN::Awesomeness
 
 by Jeff Lavallee
 ----
 == What we'll cover
+
 * CPAN setup
+
 * advanced CPAN Setup
+
 * CPAN::Mini
+
 * CPAN::Reporter
+
 * CPAN::Reporter::Smoker
 
 ----
@@ -35,35 +40,38 @@ by Jeff Lavallee
 * The first time you run cpan, it will prompt for a lot of information
 
 * Hopefully most of it is pretty self-explanitory
+
 +  * don't worry if you're missing some of the programs it's looking for
+
 +  * generally cpan will work file without them (I.E. ncftpget)
 
 +* In general, the defaults should be fine
 
-+* My recommendations:
+----
+== CPAN Setup
 
+* My recommendations:
 
 +  * auto commit config changes
 
-  * Always commit changes to config variables to disk? [no] yes
+    Always commit changes to config variables to disk? [no] yes
 
 +  * follow prerequisits
 
-  * Policy on building prerequisites (follow, ask or ignore)? [ask] follow
+    Policy on building prerequisites (follow, ask or ignore)? [ask] follow
 
 +  * install build_requires: yes (or no, but not ask!)
 
-  * Policy on installing 'build_requires' modules (yes, no, ask/yes, ask/no)? [ask/yes] yes
+    Policy on installing 'build_requires' modules (yes, no, ask/yes, ask/no)? [ask/yes] yes
 
 +  * Module::Build as prefered installer 
 
-  * In case you can choose between running a Makefile.PL or a Build.PL,
+    In case you can choose between running a Makefile.PL or a Build.PL,
 which installer would you prefer (EUMM or MB or RAND)? [MB] 
 
 
 ----
 == Using CPAN
-
 
 * command line client: cpan
 
@@ -76,40 +84,44 @@ which installer would you prefer (EUMM or MB or RAND)? [MB]
 +* CPAN shell
 +* $> cpan                    <---- start the CPAN.pm shell
 * usually:
-  * cpan> install Foo::Bar    <---- installs Foo::Bar
-  * cpan> i/FooBar/           <---- search for a module with "FooBar" in its name
+  * cpan[1]> install Foo::Bar    <---- installs Foo::Bar
+  * cpan[2]> i /FooBar/          <---- search for a module with "FooBar" in its name
+
+----
+== Configuration in the CPAN shell
+
+* cpan[1]> o conf auto_commit                  <---- view a setting
+      auto_commit        [0]
+  Type 'o conf' to view all configuration items
+
++* cpan[3]> o conf auto_commit 1               <---- change a setting
+       auto_commit        [1]
 
 ----
 == Making it better
 
 * install Bundle::CPAN
-* lots of new functionality added
-+* command history
-+* more configurable
-+* fancy colors
+
++* lots of new functionality added
+
++  * command history
+
++  * more configurable
+
++  * fancy colors
 
 +* the older your perl, the happier Bundle::CPAN will make you!
 
 ----
-== Configuration in the CPAN shell
-
-* cpan[1]> o conf auto_commit                    <---- view a setting
-      auto_commit        [0]
-  Type 'o conf' to view all configuration items
-
-+* cpan[3]> o conf auto_commit 1                 <---- change a setting
-       auto_commit        [1]
-
-----
 == More configuration 
 
-+* never run cpan as root again!
+* never run cpan as root again!
 
-+* cpan[4]> o conf make_install_make_command "sudo /usr/bin/make"                            
++  * cpan[4]> o conf make_install_make_command "sudo /usr/bin/make"                            
     make_install_make_command [sudo /usr/bin/make]
 commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
 
-+* cpan[5]> o conf mbuild_install_build_command "sudo ./Build"                               
++  * cpan[5]> o conf mbuild_install_build_command "sudo ./Build"                               
     mbuild_install_build_command [sudo ./Build]
 commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
 
@@ -119,17 +131,21 @@ commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
 == CPAN is Great!
 
 * I'm using CPAN all time.  I love it!
+
 +  * Except when I'm on an airplane
+
 +  * or a boat
-+  * or to cheap to pay for wifi
+
++  * or too cheap to pay for wifi
 
 ----
 == CPAN::Mini to the rescue!
 
 * What is CPAN::Mini?
-+  * creates a minimal mirror of CPAN
 
-+  * only the files needed to install the newest version of every CPAN distribution: 
++* creates a minimal mirror of CPAN
+
++* only the files needed to install the newest version of every CPAN distribution: 
 
 +  * index files:
     *   01mailrc.txt.gz
@@ -139,11 +155,11 @@ commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
 +  * module files:
     *   the last non-developer release of every dist for every author
 
-+  * that must be huge!
-+  * it's not *that* big - mine is currently 1.1G
-+  * besides, disks are cheap!
++* that must be huge!
++* it's not *that* big - mine is currently 1.1G
++* besides, disks are cheap!
 
-+  * bonus: cpan installs are a lot faster
++* bonus: cpan installs are a lot faster
 
 ----
 == CPAN::Mini setup
@@ -263,6 +279,18 @@ transport=Net::SMTP::TLS User jeff@zeroclue.com Password xxxxxxxxx Port 587
   * specify my username, password, and the port to use
 
 ----
+== CPAN::Reporter setup
+
+* see also: perldoc CPAN::Reporter::Config
+
++  * lots of help for setting up CPAN::Reporter
+
++  * useful to run w/o sending reports:
+
+    transport=File ~/saved-reports-dir
+
+
+----
 == CPAN::Reporter in action!
 
 cpan[1]> install Acme::Bleach                                                             
@@ -378,23 +406,125 @@ cpan[2]>
 +* that's a lie
 
 +  * minimum step: run as a dedicated user
+
 +  * I usually create a user called "smoke" that's certainly not in wheel 
     or any other priviledged group
+
++  * I usually use a dedicated perl install for testing, I.E.
+
+   /usr/local/perl_5_8_9/
+
++* still scared?  
+
++  * Checkout CPAN::Reporter::Smoker::Safer
+
++  * like CPAN::Reporter::Smoker, but limits the set of distributions to
+    those that are already installed on the system
 
 ----
 == CPAN::Reporter::Smoker tips
 
-* use screen
+* Use a CPAN::Mini mirror
+
+  * You'll reduce load on CPAN mirrors
+
++* You'll need to mirror the CPAN indicies for the smoker
+
+  * see CPAN::Mini ~/.minicpanrc from earlier
+
+* use CPAN.pm "distroprefs" to prevent testing things that hang your smoker
+
++* David Golden's set of distroprefs is a great start:
+
+  http://echo.dagolden.com/git/?p=distroprefs.git;a=summary
+
+----
+== CPAN::Reporter::Smoker tips
+
++ * use screen to let your smoker run un-attended and un-interuppted
+
++  * start with $> screen -S smoker
+
++  * detach with ^a^d
+
++  * reattach with screen -D -R smoker
+
+----
+== Starting your smoker:
+
+jeff@pokey:~ $ sudo su - smoke
+pokey:~ smoke$ /usr/local/bin/perl -MCPAN::Reporter::Smoker -e start
+Starting CPAN::Reporter::SmokerCPAN: Term::ANSIColor loaded ok (v1.12)
+CPAN: CPAN::SQLite loaded ok (v0.197)
+CPAN: YAML loaded ok (v0.66)
+Going to read 126 yaml files from /Users/smoke/.cpan/build/
+CPAN: Time::HiRes loaded ok (v1.9711)
+............................................................................DONE
+
+Restored the state of 108 (in 1.7040 secs)Database was generated on Wed, 12 Aug 2009 06:56:44 GMT
+Smoker: getting modules/02packages.details.txt.gz from CPANCPAN: LWP::UserAgent loaded ok (v5.826)
+Fetching with LWP:  http://localhost/~jeff/CPAN/modules/02packages.details.txt.gz
+Smoker: getting indices/find-ls.gz from CPAN
+Fetching with LWP:  http://localhost/~jeff/CPAN/indices/find-ls.gz
+Smoker: scanning and sorting index
+Smoker: found 18954 distributions on CPAN
+Scanning cache /Users/smoke/.cpan/build for sizes
+............................................................................DONE
+
+Smoker: testing Email-Stuff-2.100 [1/18954] at Wed Aug 12 00:01:48 2009
+
+CPAN: Term::ANSIColor loaded ok (v1.12)
+CPAN: File::HomeDir loaded ok (v0.69)
+CPAN: CPAN::SQLite loaded ok (v0.197)
+CPAN: YAML loaded ok (v0.66)
+Going to read 126 yaml files from /Users/smoke/.cpan/build/
+CPAN: Time::HiRes loaded ok (v1.9711)
+............................................................................DONE
+Restored the state of 108 (in 1.7507 secs)
+Database was generated on Wed, 12 Aug 2009 06:56:44 GMT
+CPAN: CPAN::Kwalify loaded ok (v5.50)
+Running make for R/RJ/RJBS/Email-Stuff-2.100.tar.gz
+
+  CPAN.pm: Going to build R/RJ/RJBS/Email-Stuff-2.100.tar.gz
 
 
 
+----
+== Resources
+
+* http://cpan.org/
+
+* http://search.cpan.org/dist/CPAN-Mini/
+
+* http://search.cpan.org/dist/CPAN-Reporter/
+
+* http://search.cpan.org/dist/CPAN-Reporter-Smoker/
+
+* http://cpantesters.org/
+
+* http://github.com/rjbs/cpan-mini/tree/master
+
+* http://echo.dagolden.com/git/?p=distroprefs.git;a=summary
 
 
----- perl,i10
-# Perl code indented 10 spaces
-use Vroom::Vroom;
+----
+== Thanks
 
-print "Hello World";
+* Ingy for Vroom::Vroom, what I used to create this slideshow
+
+* Ricardo SIGNES for CPAN::Mini
+
+* David Golden for CPAN::Reporter::Smoker and CPAN::Mini::Devel 
+
+* David Westbrook for CPAN::Reporter::Smoker::Safer
+
+* Eric Wilhelm, gracious host of PDX.pm and author of a pile of perl modules!
+
+* all the other CPAN authors upon whose work these modules depend on
+
+
 ---- center
-THE END
+The End
+
+is it beer :30 yet?
 

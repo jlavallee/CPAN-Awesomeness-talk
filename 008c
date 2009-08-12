@@ -15,15 +15,15 @@
 
 
 
+                                          Making it better
+          
+          * install Bundle::CPAN
+          
+          * lots of new functionality added
+          
+            * command history
+          
 
-                                         More configuration
-          
-          * never run cpan as root again!
-          
-          * cpan[4]> o conf make_install_make_command "sudo /usr/bin/make"                            
-              make_install_make_command [sudo /usr/bin/make]
-          commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
-          
 
 
 
