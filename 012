@@ -2,40 +2,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                          CPAN::Mini setup
-
-jeff@pokey:~ $ cat ~/.minicpanrc 
-local: ~/Sites/CPAN/
-remote: http://cpan.hexten.net/
-class: CPAN::Mini
-also_mirror: indices/find-ls.gz indices/ls-lR.gz
-
-
-
-
-
-
-
-
-
-
-
+                            CPAN::Mini to the rescue!
+          
+          * but, but...  that must be huge!
+          
 
 
 

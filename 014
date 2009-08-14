@@ -2,42 +2,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-                                           Sweet Emailz!
-
-    From:   jeff@zeroclue.com
-    Subject:    Cron <jeff@pokey> /usr/local/bin/minicpan 
-    Date:   July 27, 2009 1:20:02 AM PDT
-    To:     jeff@zeroclue.com
-
-    indices/find-ls.gz ... updated
-    authors/01mailrc.txt.gz ... updated
-    modules/02packages.details.txt.gz ... updated
-    modules/03modlist.data.gz ... up to date
-    indices/find-ls.gz ... updated
-    indices/ls-lR.gz ... updated
-    Scanning 02packages.details ...
-    CPAN: File::Which loaded ok (v0.05)
-    Scanning find-ls ...
-    authors/id/A/AG/AGRUNDMA/Audio-Scan-0.27.tar.gz ... updated
-    authors/id/A/AG/AGRUNDMA/CHECKSUMS ... updated
-    authors/id/B/BA/BAYASHI/WWW-Tube8-1.0.1.tar.gz ... updated
-    authors/id/B/BA/BAYASHI/CHECKSUMS ... updated
-
-
-
-
-
-
+                                CPAN::Mini crontab
+          
+          # m h dom mon dow command
+          20  1   *   *   *   /usr/local/bin/minicpan 
+          
+          
 
 
 

@@ -2,36 +2,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                               Thanks
-          
-          * Ingy for Vroom::Vroom, what I used to create this slideshow
-          
-          * Ricardo SIGNES for CPAN::Mini
-          
-          * David Golden for CPAN::Reporter::Smoker and CPAN::Mini::Devel 
-          
-          * David Westbrook for CPAN::Reporter::Smoker::Safer
-          
-          * Eric Wilhelm, gracious host of PDX.pm and author of a pile of perl modules!
-          
-          * all the other CPAN authors upon whose work these modules depend on
-
-
-
-
+                           CPAN::Reporter::Smoker tips
 
 
 

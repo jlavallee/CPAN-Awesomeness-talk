@@ -1,47 +1,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-                                   CPAN::Reporter setup - detail
+                               Give something back
           
-          * cc_author=no
+          * Spend 10 minutes and give something back 
+            to CPAN every time you install a module
           
-            * Don't cc authors - some are annoyed by direct emails
+          * How?
           
-          * edit_report=default:ask/no pass/na:no
+          * setup CPAN::Reporter
           
-            * if the results are pass or N/A, don't ask to edit
-            * otherwise (failure), ask and default to "no edit"
+          * send CPAN Test reports every time you install a module!
           
-          * email_from=jeff@zeroclue.com
-          
-          * send_report=default:ask/yes pass/na:yes
-          
-            * if the results are pass or N/A, don't ask - just send
-            * otherwise, ask and default to "yes (send)"
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

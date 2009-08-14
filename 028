@@ -3,44 +3,14 @@
 
 
 
+                         CPAN::Reporter::Smoker warning!
 
+   WARNING -- smoke testing is risky
 
-
-
-
-
-
-
-
-
-
-                                    CPAN::Reporter::Smoker tips
-          
-          * Use a CPAN::Mini mirror
-          
-            * You'll reduce load on CPAN mirrors
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   Smoke testing will download and run programs that other people have
+   uploaded to CPAN.  These programs could do anything to your system,
+   including deleting everything on it.  Do not run CPAN::Reporter::Smoker
+   unless you are prepared to take these risks.
 
 
 

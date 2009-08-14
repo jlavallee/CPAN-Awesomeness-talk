@@ -1,0 +1,20 @@
+
+
+
+                          CPAN::Reporter setup - detail
+          
+          * smtp_server=smtp.gmail.com
+          
+          * transport=Net::SMTP::TLS User jeff@zeroclue.com \
+            Password xxxxxxxxx Port 587
+          
+            * use Net::SMTP::TLS, because google's SMTP servers 
+              require authentication
+          
+              specify my username, password, and the port to use
+
+
+
+
+
+

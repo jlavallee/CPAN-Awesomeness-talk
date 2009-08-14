@@ -1,40 +1,10 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                             Resources
+                           CPAN::Reporter::Smoker tips
           
-          * http://cpan.org/
+          * Use a CPAN::Mini mirror
           
-          * http://search.cpan.org/dist/CPAN-Mini/
+            * You'll reduce load on CPAN mirrors
           
-          * http://search.cpan.org/dist/CPAN-Reporter/
-          
-          * http://search.cpan.org/dist/CPAN-Reporter-Smoker/
-          
-          * http://cpantesters.org/
-          
-          * http://github.com/rjbs/cpan-mini/tree/master
-          
-          * http://echo.dagolden.com/git/?p=distroprefs.git;a=summary
-
-
-
-
-
-
 
 
 

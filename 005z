@@ -1,50 +1,20 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                             CPAN Setup
+                        CPAN Setup - some recommendations
           
-          * My recommendations:
+          * auto commit config changes
+            - Always commit changes to config variables to disk? [no] yes
           
-            * auto commit config changes
+          * follow prerequisites
+            - Policy on building prerequisites 
+                (follow, ask or ignore)? [ask] follow
           
-              Always commit changes to config variables to disk? [no] yes
+          * install build_requires: yes (or no, but not ask!)
+            - Policy on installing 'build_requires' modules 
+                (yes, no, ask/yes, ask/no)? [ask/yes] yes
           
-            * follow prerequisits
-          
-              Policy on building prerequisites (follow, ask or ignore)? [ask] follow
-          
-            * install build_requires: yes (or no, but not ask!)
-          
-              Policy on installing 'build_requires' modules (yes, no, ask/yes, ask/no)? [ask/yes] yes
-          
-            * Module::Build as prefered installer 
-          
-              In case you can choose between running a Makefile.PL or a Build.PL,
-          which installer would you prefer (EUMM or MB or RAND)? [MB] 
-
-
-
-
-
-
-
-
-
-
-
-
-
+          * Module::Build as prefered installer 
+            - In case you can choose between running a Makefile.PL or a Build.PL,
+                which installer would you prefer (EUMM or MB or RAND)? [MB] MB
 
 
 

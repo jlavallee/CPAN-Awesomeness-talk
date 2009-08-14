@@ -1,0 +1,20 @@
+
+
+
+
+
+                              CPAN::Reporter::Smoker
+          
+          * still scared?  
+          
+            * Checkout CPAN::Reporter::Smoker::Safer
+          
+            * like CPAN::Reporter::Smoker, but limits the set of distributions to
+              those that are already installed on the system
+
+
+
+
+
+
+

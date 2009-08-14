@@ -1,19 +1,17 @@
 ---- config
 # These are YAML settings for Vroom
 title: "CPAN::Awesomeness"
-height: 50
-width: 100
+height: 20
+width: 82
 #skip: 10   
 ---- center
-CPAN::Awesomeness
+CPAN::Awesomeness - A hodgepodge of CPAN niftyness
 
 by Jeff Lavallee
 ----
 == What we'll cover
 
-* CPAN setup
-
-* advanced CPAN Setup
+* CPAN setup (basic & advanced)
 
 * CPAN::Mini
 
@@ -48,27 +46,22 @@ by Jeff Lavallee
 +* In general, the defaults should be fine
 
 ----
-== CPAN Setup
+== CPAN Setup - some recommendations
 
-* My recommendations:
+* auto commit config changes
+  - Always commit changes to config variables to disk? [no] yes
 
-+  * auto commit config changes
++* follow prerequisites
+  - Policy on building prerequisites 
+      (follow, ask or ignore)? [ask] follow
 
-    Always commit changes to config variables to disk? [no] yes
++* install build_requires: yes (or no, but not ask!)
+  - Policy on installing 'build_requires' modules 
+      (yes, no, ask/yes, ask/no)? [ask/yes] yes
 
-+  * follow prerequisits
-
-    Policy on building prerequisites (follow, ask or ignore)? [ask] follow
-
-+  * install build_requires: yes (or no, but not ask!)
-
-    Policy on installing 'build_requires' modules (yes, no, ask/yes, ask/no)? [ask/yes] yes
-
-+  * Module::Build as prefered installer 
-
-    In case you can choose between running a Makefile.PL or a Build.PL,
-which installer would you prefer (EUMM or MB or RAND)? [MB] 
-
++* Module::Build as prefered installer 
+  - In case you can choose between running a Makefile.PL or a Build.PL,
+      which installer would you prefer (EUMM or MB or RAND)? [MB] MB
 
 ----
 == Using CPAN
@@ -82,10 +75,11 @@ which installer would you prefer (EUMM or MB or RAND)? [MB]
 * $> cpan Foo::Bar            <---- installs Foo:Bar
 
 +* CPAN shell
-+* $> cpan                    <---- start the CPAN.pm shell
++* $> cpan                     <---- start the CPAN.pm shell
 * usually:
   * cpan[1]> install Foo::Bar    <---- installs Foo::Bar
-  * cpan[2]> i /FooBar/          <---- search for a module with "FooBar" in its name
+  * cpan[2]> i /FooBar/          <---- search for a module with 
+                                       "FooBar" in its name
 
 ----
 == Configuration in the CPAN shell
@@ -119,13 +113,11 @@ which installer would you prefer (EUMM or MB or RAND)? [MB]
 
 +  * cpan[4]> o conf make_install_make_command "sudo /usr/bin/make"                            
     make_install_make_command [sudo /usr/bin/make]
-commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
+    commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
 
 +  * cpan[5]> o conf mbuild_install_build_command "sudo ./Build"                               
     mbuild_install_build_command [sudo ./Build]
-commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
-
-
+    commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
 
 ----
 == CPAN is Great!
@@ -145,7 +137,8 @@ commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
 
 +* creates a minimal mirror of CPAN
 
-+* only the files needed to install the newest version of every CPAN distribution: 
++* only the files needed to install the newest version 
+  of every CPAN distribution: 
 
 +  * index files:
     *   01mailrc.txt.gz
@@ -155,8 +148,13 @@ commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
 +  * module files:
     *   the last non-developer release of every dist for every author
 
-+* that must be huge!
+----
+== CPAN::Mini to the rescue!
+
+* but, but...  that must be huge!
+
 +* it's not *that* big - mine is currently 1.1G
+
 +* besides, disks are cheap!
 
 +* bonus: cpan installs are a lot faster
@@ -164,11 +162,10 @@ commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
 ----
 == CPAN::Mini setup
 
-jeff@pokey:~ $ cat ~/.minicpanrc 
-local: ~/Sites/CPAN/
-remote: http://cpan.hexten.net/
-class: CPAN::Mini
-also_mirror: indices/find-ls.gz indices/ls-lR.gz
+  jeff@pokey:~ $ cat ~/.minicpanrc 
+  local: ~/Sites/CPAN/
+  remote: http://cpan.hexten.net/
+  also_mirror: indices/find-ls.gz indices/ls-lR.gz
 
 ---- crontab,i10
 == CPAN::Mini crontab
@@ -210,13 +207,13 @@ also_mirror: indices/find-ls.gz indices/ls-lR.gz
 
 Our mirror won't do us much good unless we use it:
 
-    --- /home/jeff/.cpan/CPAN/MyConfig.pm.a Tue Aug 11 21:41:21 2009
-    +++ /home/jeff/.cpan/CPAN/MyConfig.pm   Tue Aug 11 21:41:49 2009
-    @@ -62,3 +62,3 @@
-       'unzip' => q[/usr/local/bin/unzip],
-    -  'urllist' => [q[http://localhost/~jeff/CPAN/], q[ftp://cpan.hexten.net/], q[ftp://cpan.pair.com/pub/CPAN/]],
-    +  'urllist' => [q[ftp://cpan.hexten.net/], q[ftp://cpan.pair.com/pub/CPAN/]],
-       'use_sqlite' => q[1],
+ --- /Users/jeff/.cpan/CPAN/MyConfig.pm.a    2009-08-11 21:40:04.000000000 -0700
+ +++ /Users/jeff/.cpan/CPAN/MyConfig.pm  2009-01-14 19:33:26.000000000 -0800
+ @@ -62,3 +62,3 @@
+    'unzip' => q[/usr/bin/unzip],
+ -  'urllist' => [q[ftp://cpan.thepirtgroup.com/]],
+ +  'urllist' => [q[http://localhost/~jeff/CPAN/], q[ftp://cpan.thepirtgroup.com/]],
+    'use_sqlite' => q[1],
 
 ---- center
 
@@ -239,18 +236,18 @@ Sweet!  What's next?
 ---- 
 == CPAN::Reporter setup
 
-cpan[1]> o conf test_report 1                                                             
-    test_report        [1]
-commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
-
-
-jeff@pokey:~ $ cat ~/.cpanreporter/config.ini
-cc_author=no
-edit_report=default:ask/no pass/na:no
-email_from=jeff@zeroclue.com
-send_report=default:ask/yes pass/na:yes
-smtp_server=smtp.gmail.com
-transport=Net::SMTP::TLS User jeff@zeroclue.com Password xxxxxxxxx Port 587
+  cpan[1]> o conf test_report 1                                                             
+      test_report        [1]
+  commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
+  
+  
+  jeff@pokey:~ $ cat ~/.cpanreporter/config.ini
+  cc_author=no
+  edit_report=default:ask/no pass/na:no
+  email_from=jeff@zeroclue.com
+  send_report=default:ask/yes pass/na:yes
+  smtp_server=smtp.gmail.com
+  transport=Net::SMTP::TLS User jeff@zeroclue.com Password xxxxxxxxx Port 587
 
 ----
 == CPAN::Reporter setup - detail
@@ -262,21 +259,28 @@ transport=Net::SMTP::TLS User jeff@zeroclue.com Password xxxxxxxxx Port 587
 +* edit_report=default:ask/no pass/na:no
 
   * if the results are pass or N/A, don't ask to edit
-  * otherwise (failure), ask and default to "no edit"
+    otherwise (failure), ask and default to "no edit"
 
 +* email_from=jeff@zeroclue.com
 
 +* send_report=default:ask/yes pass/na:yes
 
   * if the results are pass or N/A, don't ask - just send
-  * otherwise, ask and default to "yes (send)"
+    otherwise, ask and default to "yes (send)"
 
-+* smtp_server=smtp.gmail.com
+----
+== CPAN::Reporter setup - detail
 
-+* transport=Net::SMTP::TLS User jeff@zeroclue.com Password xxxxxxxxx Port 587
+* smtp_server=smtp.gmail.com
 
-  * use Net::SMTP::TLS, because google's SMTP servers require authentication
-  * specify my username, password, and the port to use
++* transport=Net::SMTP::TLS User jeff@zeroclue.com \
+  Password xxxxxxxxx Port 587
+
+  * use Net::SMTP::TLS, because google's SMTP servers 
+    require authentication
+
+    specify my username, password, and the port to use
+
 
 ----
 == CPAN::Reporter setup
@@ -414,7 +418,10 @@ cpan[2]>
 
    /usr/local/perl_5_8_9/
 
-+* still scared?  
+----
+== CPAN::Reporter::Smoker 
+
+* still scared?  
 
 +  * Checkout CPAN::Reporter::Smoker::Safer
 
@@ -432,7 +439,8 @@ cpan[2]>
 
   * see CPAN::Mini ~/.minicpanrc from earlier
 
-* use CPAN.pm "distroprefs" to prevent testing things that hang your smoker
+* use CPAN.pm "distroprefs" to prevent testing things that 
+  hang your smoker/you know are broken/whatever
 
 +* David Golden's set of distroprefs is a great start:
 
@@ -487,8 +495,6 @@ Running make for R/RJ/RJBS/Email-Stuff-2.100.tar.gz
 
   CPAN.pm: Going to build R/RJ/RJBS/Email-Stuff-2.100.tar.gz
 
-
-
 ----
 == Resources
 
@@ -518,12 +524,13 @@ Running make for R/RJ/RJBS/Email-Stuff-2.100.tar.gz
 
 * David Westbrook for CPAN::Reporter::Smoker::Safer
 
-* Eric Wilhelm, gracious host of PDX.pm and author of a pile of perl modules!
+* Eric Wilhelm, gracious host of PDX.pm and prolific CPAN author
 
 * all the other CPAN authors upon whose work these modules depend on
 
 
 ---- center
+
 The End
 
 is it beer :30 yet?

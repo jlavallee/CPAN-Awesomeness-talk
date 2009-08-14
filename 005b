@@ -1,43 +1,13 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                             CPAN Setup
+                        CPAN Setup - some recommendations
           
-          * My recommendations:
+          * auto commit config changes
+            - Always commit changes to config variables to disk? [no] yes
           
-            * auto commit config changes
+          * follow prerequisites
+            - Policy on building prerequisites 
+                (follow, ask or ignore)? [ask] follow
           
-              Always commit changes to config variables to disk? [no] yes
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

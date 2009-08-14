@@ -1,0 +1,20 @@
+
+                           CPAN::Reporter::Smoker tips
+          
+          * Use a CPAN::Mini mirror
+          
+            * You'll reduce load on CPAN mirrors
+          
+          * You'll need to mirror the CPAN indicies for the smoker
+          
+            * see CPAN::Mini ~/.minicpanrc from earlier
+          
+          * use CPAN.pm "distroprefs" to prevent testing things that 
+            hang your smoker/you know are broken/whatever
+          
+          * David Golden's set of distroprefs is a great start:
+          
+            http://echo.dagolden.com/git/?p=distroprefs.git;a=summary
+
+
+

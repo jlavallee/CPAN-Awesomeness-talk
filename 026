@@ -1,40 +1,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                  CPAN::Reporter::Smoker warning!
-
-   WARNING -- smoke testing is risky
-
-   Smoke testing will download and run programs that other people have
-   uploaded to CPAN.  These programs could do anything to your system,
-   including deleting everything on it.  Do not run CPAN::Reporter::Smoker
-   unless you are prepared to take these risks.
-
-
-
-
-
-
-
-
-
+                                     Awesome!
+          
+          * we can install CPAN modules w/o running cpan as root
+          
 
 
 

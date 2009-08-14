@@ -1,20 +1,5 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                             Using CPAN
+                                    Using CPAN
           
           * command line client: cpan
           
@@ -24,21 +9,6 @@
           * basic usage:
           * $> cpan Foo::Bar            <---- installs Foo:Bar
           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

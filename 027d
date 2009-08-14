@@ -1,48 +1,18 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-                                    CPAN::Reporter::Smoker setup
+                              CPAN::Reporter::Smoker
           
-          * none!
+          * Turnkey CPAN Testers smoking
           
-          * that's a lie
+            * No configuration needed
           
-            * minimum step: run as a dedicated user
+            * Tests each distribution as a separate CPAN process -- each
+             distribution has prerequisites like build_requires satisfied from
+             scratch
           
-            * I usually create a user called "smoke" that's certainly not in wheel 
-              or any other priviledged group
+            * Automatically checks for new distributions every twelve hours or as
+             otherwise specified
           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

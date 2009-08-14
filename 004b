@@ -1,22 +1,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                             CPAN Setup
+                                    CPAN Setup
           
           * The first time you run cpan, it will prompt for a lot of information
           
@@ -24,21 +9,6 @@
           
             * don't worry if you're missing some of the programs it's looking for
           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

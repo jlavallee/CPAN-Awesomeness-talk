@@ -1,22 +1,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                             CPAN Setup
+                                    CPAN Setup
           
           * The first time you run cpan, it will prompt for a lot of information
           
@@ -26,21 +11,6 @@
           
             * generally cpan will work file without them (I.E. ncftpget)
           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

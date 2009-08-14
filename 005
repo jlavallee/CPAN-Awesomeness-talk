@@ -1,39 +1,9 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                             CPAN Setup
+                        CPAN Setup - some recommendations
           
-          * My recommendations:
+          * auto commit config changes
+            - Always commit changes to config variables to disk? [no] yes
           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

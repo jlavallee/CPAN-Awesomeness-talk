@@ -1,39 +1,9 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                        CPAN::Reporter setup
+                          CPAN::Reporter setup - detail
           
-          * see also: perldoc CPAN::Reporter::Config
+          * cc_author=no
           
-
-
-
-
-
-
-
-
-
-
-
-
-
+            * Don't cc authors - some are annoyed by direct emails
+          
 
 
 

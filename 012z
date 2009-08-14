@@ -2,45 +2,15 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                         CPAN::Mini crontab
+                            CPAN::Mini to the rescue!
           
-          # m h dom mon dow command
-          20  1   *   *   *   /usr/local/bin/minicpan 
+          * but, but...  that must be huge!
           
+          * it's not *that* big - mine is currently 1.1G
           
-           * or mirror development versions:
+          * besides, disks are cheap!
           
-          # m h dom mon dow command
-          20  1   *   *   *   /usr/local/bin/minicpan -c CPAN::Mini::Devel 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          * bonus: cpan installs are a lot faster
 
 
 

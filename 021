@@ -1,40 +1,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-                                     CPAN::Reporter in action!
-
-cpan[1]> install Acme::Bleach                                                             
-CPAN: CPAN::SQLite loaded ok (v0.197)
-...
-Running make for D/DC/DCONWAY/Acme-Bleach-1.12.tar.gz
-CPAN: LWP::UserAgent loaded ok (v5.826)
-Fetching with LWP:
-  http://localhost/~jeff/CPAN/authors/id/D/DC/DCONWAY/Acme-Bleach-1.12.tar.gz
-CPAN: Digest::SHA loaded ok (v5.45)
-...
-
-  CPAN.pm: Going to build D/DC/DCONWAY/Acme-Bleach-1.12.tar.gz
-
-CPAN: CPAN::Reporter loaded ok (v1.1705)
-Checking if your kit is complete...
-Looks good
-...
-
-
-
-
+                          CPAN::Reporter setup - detail
+          
+          * smtp_server=smtp.gmail.com
+          
 
 
 
