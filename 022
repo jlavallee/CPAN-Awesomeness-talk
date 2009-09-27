@@ -2,10 +2,11 @@
 
 
 
-                               CPAN::Reporter setup
+                          CPAN::Reporter setup - detail
           
-          * see also: perldoc CPAN::Reporter::Config
+          * smtp_server=smtp.gmail.com
           
+
 
 
 

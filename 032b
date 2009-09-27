@@ -1,17 +1,17 @@
 
-
-
-
                            CPAN::Reporter::Smoker tips
-
- * use screen to let your smoker run un-attended and un-interuppted
-
-
-
-
-
-
-
+          
+          * Use a CPAN::Mini mirror
+          
+            * You'll reduce load on CPAN mirrors
+          
+          * You'll need to mirror the CPAN indicies for the smoker
+          
+            * see CPAN::Mini ~/.minicpanrc from earlier
+          
+          * use CPAN.pm "distroprefs" to prevent testing things that 
+            hang your smoker or you know are broken
+          
 
 
 

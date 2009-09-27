@@ -1,10 +1,11 @@
 
-
-
                           CPAN::Reporter setup - detail
           
-          * smtp_server=smtp.gmail.com
+          * cc_author=no
           
+            * Don't cc authors - some are annoyed by direct emails
+          
+
 
 
 

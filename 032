@@ -1,10 +1,10 @@
 
-
-
-
                            CPAN::Reporter::Smoker tips
-
-
+          
+          * Use a CPAN::Mini mirror
+          
+            * You'll reduce load on CPAN mirrors
+          
 
 
 

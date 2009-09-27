@@ -1,12 +1,13 @@
 
 
-                              CPAN::Reporter::Smoker
-          
-          * Turnkey CPAN Testers smoking
-          
-            * No configuration needed
-          
 
+
+                                     Awesome!
+          
+          * we can install CPAN modules w/o running cpan as root
+          
+          * we're able to install CPAN modules from our local mirror
+          
 
 
 

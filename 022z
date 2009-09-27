@@ -2,16 +2,17 @@
 
 
 
-                               CPAN::Reporter setup
+                          CPAN::Reporter setup - detail
           
-          * see also: perldoc CPAN::Reporter::Config
+          * smtp_server=smtp.gmail.com
           
-            * lots of help for setting up CPAN::Reporter
+          * transport=Net::SMTP::TLS User jeff@zeroclue.com \
+            Password xxxxxxxxx Port 587
           
-            * useful to run w/o sending reports:
+            * use Net::SMTP::TLS, because google's SMTP servers 
+              require authentication
           
-              transport=File ~/saved-reports-dir
-
+              specify my username, password, and the port to use
 
 
 

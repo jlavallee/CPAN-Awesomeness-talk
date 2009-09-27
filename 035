@@ -1,19 +1,20 @@
 
 
-                                      Thanks
+                                    Resources
           
-          * Ingy for Vroom::Vroom, what I used to create this slideshow
+          * http://cpan.org/
           
-          * Ricardo SIGNES for CPAN::Mini
+          * http://search.cpan.org/dist/CPAN-Mini/
           
-          * David Golden for CPAN::Reporter::Smoker and CPAN::Mini::Devel 
+          * http://search.cpan.org/dist/CPAN-Reporter/
           
-          * David Westbrook for CPAN::Reporter::Smoker::Safer
+          * http://search.cpan.org/dist/CPAN-Reporter-Smoker/
           
-          * Eric Wilhelm, gracious host of PDX.pm and prolific CPAN author
+          * http://cpantesters.org/
           
-          * all the other CPAN authors upon whose work these modules depend on
-
+          * http://github.com/rjbs/cpan-mini/tree/master
+          
+          * http://echo.dagolden.com/git/?p=distroprefs.git;a=summary
 
 
 

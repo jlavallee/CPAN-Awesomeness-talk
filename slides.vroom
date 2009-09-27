@@ -1,9 +1,9 @@
 ---- config
 # These are YAML settings for Vroom
 title: "CPAN::Awesomeness"
-height: 20
+height: 21
 width: 82
-#skip: 10   
+#skip: 20   
 ---- center
 CPAN::Awesomeness - A hodgepodge of CPAN niftyness
 
@@ -88,7 +88,7 @@ by Jeff Lavallee
       auto_commit        [0]
   Type 'o conf' to view all configuration items
 
-+* cpan[3]> o conf auto_commit 1               <---- change a setting
++* cpan[3]> o conf auto_commit 1                <---- change a setting
        auto_commit        [1]
 
 ----
@@ -155,19 +155,20 @@ by Jeff Lavallee
 
 +* it's not *that* big - mine is currently 1.1G
 
-+* besides, disks are cheap!
++* besides, disk space is cheap!
 
 +* bonus: cpan installs are a lot faster
 
-----
+---- yaml
 == CPAN::Mini setup
 
   jeff@pokey:~ $ cat ~/.minicpanrc 
   local: ~/Sites/CPAN/
   remote: http://cpan.hexten.net/
-  also_mirror: indices/find-ls.gz indices/ls-lR.gz
+  class: CPAN::Mini
+  also_mirror: indices/find-ls.gz indices/ls-lR.gz authors/00whois.xml
 
----- crontab,i10
+---- shell
 == CPAN::Mini crontab
 
 # m h dom mon dow command
@@ -202,7 +203,7 @@ by Jeff Lavallee
     authors/id/B/BA/BAYASHI/WWW-Tube8-1.0.1.tar.gz ... updated
     authors/id/B/BA/BAYASHI/CHECKSUMS ... updated
 
----- 
+---- diff
 == Teach cpan about CPAN::Mini
 
 Our mirror won't do us much good unless we use it:
@@ -236,10 +237,25 @@ Sweet!  What's next?
 ---- 
 == CPAN::Reporter setup
 
-  cpan[1]> o conf test_report 1                                                             
-      test_report        [1]
+Enable sending test reports:
+
+cpan[1]> o conf init test_report
+<snip>
+
+ <test_report>
+Email test reports if CPAN::Reporter is installed (yes/no)? [yes] 
+
+CPAN: CPAN::Reporter loaded ok (v1.1708)
+
+Proceeding to configure CPAN::Reporter.
+
+<snip>
+
   commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
   
+---- yaml
+== CPAN::Reporter config.ini
+
   
   jeff@pokey:~ $ cat ~/.cpanreporter/config.ini
   cc_author=no
@@ -368,7 +384,7 @@ cpan[2]>
 
 * we can install CPAN modules w/o running cpan as root
 
-+* we're able to install CPAN modules from my local mirror
++* we're able to install CPAN modules from our local mirror
 
 +* we're sending test reports every time we install a CPAN module
 
@@ -411,7 +427,7 @@ cpan[2]>
 
 +  * minimum step: run as a dedicated user
 
-+  * I usually create a user called "smoke" that's certainly not in wheel 
++  * I usually create a user called "smoke" that's not in wheel 
     or any other priviledged group
 
 +  * I usually use a dedicated perl install for testing, I.E.
@@ -425,8 +441,8 @@ cpan[2]>
 
 +  * Checkout CPAN::Reporter::Smoker::Safer
 
-+  * like CPAN::Reporter::Smoker, but limits the set of distributions to
-    those that are already installed on the system
++  * like CPAN::Reporter::Smoker, but limits the set of distributions
+    tested to those that are already installed on the system
 
 ----
 == CPAN::Reporter::Smoker tips
@@ -440,7 +456,7 @@ cpan[2]>
   * see CPAN::Mini ~/.minicpanrc from earlier
 
 * use CPAN.pm "distroprefs" to prevent testing things that 
-  hang your smoker/you know are broken/whatever
+  hang your smoker or you know are broken
 
 +* David Golden's set of distroprefs is a great start:
 
@@ -455,13 +471,13 @@ cpan[2]>
 
 +  * detach with ^a^d
 
-+  * reattach with screen -D -R smoker
++  * reattach with screen -d -x smoker
 
 ----
 == Starting your smoker:
 
 jeff@pokey:~ $ sudo su - smoke
-pokey:~ smoke$ /usr/local/bin/perl -MCPAN::Reporter::Smoker -e start
+pokey:~ smoke$ /usr/local/perl_5_8_9/bin/perl -MCPAN::Reporter::Smoker -e start
 Starting CPAN::Reporter::SmokerCPAN: Term::ANSIColor loaded ok (v1.12)
 CPAN: CPAN::SQLite loaded ok (v0.197)
 CPAN: YAML loaded ok (v0.66)
@@ -526,7 +542,7 @@ Running make for R/RJ/RJBS/Email-Stuff-2.100.tar.gz
 
 * Eric Wilhelm, gracious host of PDX.pm and prolific CPAN author
 
-* all the other CPAN authors upon whose work these modules depend on
+* all the other CPAN authors whose work these modules depend on
 
 
 ---- center

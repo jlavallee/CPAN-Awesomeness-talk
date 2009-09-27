@@ -1,15 +1,16 @@
 
 
-                              CPAN::Reporter::Smoker
+
+
+                                     Awesome!
           
-          * Turnkey CPAN Testers smoking
+          * we can install CPAN modules w/o running cpan as root
           
-            * No configuration needed
+          * we're able to install CPAN modules from our local mirror
           
-            * Tests each distribution as a separate CPAN process -- each
-             distribution has prerequisites like build_requires satisfied from
-             scratch
+          * we're sending test reports every time we install a CPAN module
           
+
 
 
 

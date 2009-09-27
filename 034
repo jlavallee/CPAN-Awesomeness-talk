@@ -1,20 +1,36 @@
+                              Starting your smoker:
 
-                                    Resources
-          
-          * http://cpan.org/
-          
-          * http://search.cpan.org/dist/CPAN-Mini/
-          
-          * http://search.cpan.org/dist/CPAN-Reporter/
-          
-          * http://search.cpan.org/dist/CPAN-Reporter-Smoker/
-          
-          * http://cpantesters.org/
-          
-          * http://github.com/rjbs/cpan-mini/tree/master
-          
-          * http://echo.dagolden.com/git/?p=distroprefs.git;a=summary
+jeff@pokey:~ $ sudo su - smoke
+pokey:~ smoke$ /usr/local/perl_5_8_9/bin/perl -MCPAN::Reporter::Smoker -e start
+Starting CPAN::Reporter::SmokerCPAN: Term::ANSIColor loaded ok (v1.12)
+CPAN: CPAN::SQLite loaded ok (v0.197)
+CPAN: YAML loaded ok (v0.66)
+Going to read 126 yaml files from /Users/smoke/.cpan/build/
+CPAN: Time::HiRes loaded ok (v1.9711)
+............................................................................DONE
 
+Restored the state of 108 (in 1.7040 secs)Database was generated on Wed, 12 Aug 2009 06:56:44 GMT
+Smoker: getting modules/02packages.details.txt.gz from CPANCPAN: LWP::UserAgent loaded ok (v5.826)
+Fetching with LWP:  http://localhost/~jeff/CPAN/modules/02packages.details.txt.gz
+Smoker: getting indices/find-ls.gz from CPAN
+Fetching with LWP:  http://localhost/~jeff/CPAN/indices/find-ls.gz
+Smoker: scanning and sorting index
+Smoker: found 18954 distributions on CPAN
+Scanning cache /Users/smoke/.cpan/build for sizes
+............................................................................DONE
 
+Smoker: testing Email-Stuff-2.100 [1/18954] at Wed Aug 12 00:01:48 2009
 
+CPAN: Term::ANSIColor loaded ok (v1.12)
+CPAN: File::HomeDir loaded ok (v0.69)
+CPAN: CPAN::SQLite loaded ok (v0.197)
+CPAN: YAML loaded ok (v0.66)
+Going to read 126 yaml files from /Users/smoke/.cpan/build/
+CPAN: Time::HiRes loaded ok (v1.9711)
+............................................................................DONE
+Restored the state of 108 (in 1.7507 secs)
+Database was generated on Wed, 12 Aug 2009 06:56:44 GMT
+CPAN: CPAN::Kwalify loaded ok (v5.50)
+Running make for R/RJ/RJBS/Email-Stuff-2.100.tar.gz
 
+  CPAN.pm: Going to build R/RJ/RJBS/Email-Stuff-2.100.tar.gz
