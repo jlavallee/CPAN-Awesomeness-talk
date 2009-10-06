@@ -1,0 +1,21 @@
+
+
+
+
+
+
+                                 CPAN::Mini setup
+
+  jeff@pokey:~ $ cat ~/.minicpanrc 
+  local: ~/Sites/CPAN/
+  remote: http://cpan.hexten.net/
+  class: CPAN::Mini
+  also_mirror: indices/find-ls.gz indices/ls-lR.gz authors/00whois.xml
+
+
+
+
+
+
+
+

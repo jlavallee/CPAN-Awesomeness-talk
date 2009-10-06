@@ -1,0 +1,21 @@
+
+                          CPAN::Reporter setup - detail
+          
+          * cc_author=no
+          
+            * Don't cc authors - some are annoyed by direct emails
+          
+          * edit_report=default:ask/no pass/na:no
+          
+            * if the results are pass or N/A, don't ask to edit
+              otherwise (failure), ask and default to "no edit"
+          
+
+
+
+
+
+
+
+
+

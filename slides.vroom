@@ -203,18 +203,18 @@ by Jeff Lavallee
     authors/id/B/BA/BAYASHI/WWW-Tube8-1.0.1.tar.gz ... updated
     authors/id/B/BA/BAYASHI/CHECKSUMS ... updated
 
----- diff
-== Teach cpan about CPAN::Mini
-
-Our mirror won't do us much good unless we use it:
-
- --- /Users/jeff/.cpan/CPAN/MyConfig.pm.a    2009-08-11 21:40:04.000000000 -0700
- +++ /Users/jeff/.cpan/CPAN/MyConfig.pm  2009-01-14 19:33:26.000000000 -0800
- @@ -62,3 +62,3 @@
-    'unzip' => q[/usr/bin/unzip],
- -  'urllist' => [q[ftp://cpan.thepirtgroup.com/]],
- +  'urllist' => [q[http://localhost/~jeff/CPAN/], q[ftp://cpan.thepirtgroup.com/]],
-    'use_sqlite' => q[1],
+---- diff,i-1
+.== Teach cpan about CPAN::Mini
+.
+.Our mirror won't do us much good unless we use it:
+. 
+.--- /Users/jeff/.cpan/CPAN/MyConfig.pm.a	2009-08-11 21:40:04.000000000 -0700
+.+++ /Users/jeff/.cpan/CPAN/MyConfig.pm	2009-01-14 19:33:26.000000000 -0800
+.@@ -62,3 +62,3 @@
+.   'unzip' => q[/usr/bin/unzip],
+.-  'urllist' => [q[ftp://cpan.thepirtgroup.com/]],
+.+  'urllist' => [q[http://localhost/~jeff/CPAN/], q[ftp://cpan.thepirtgroup.com/]],
+.   'use_sqlite' => q[1],
 
 ---- center
 
