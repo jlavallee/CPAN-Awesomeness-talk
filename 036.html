@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>036</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "035" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "037" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>
+
+
+                                      Thanks
+          
+          * Ingy for Vroom::Vroom, what I used to create this slideshow
+          
+          * Ricardo SIGNES for CPAN::Mini
+          
+          * David Golden for CPAN::Reporter::Smoker and CPAN::Mini::Devel 
+          
+          * David Westbrook for CPAN::Reporter::Smoker::Safer
+          
+          * Eric Wilhelm, gracious host of PDX.pm and prolific CPAN author
+          
+          * all the other CPAN authors whose work these modules depend on
+
+
+
+
+
+</pre>
+</body>
