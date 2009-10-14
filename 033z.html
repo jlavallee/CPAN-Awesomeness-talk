@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>036</title>
+<title>033z</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script>
 function navigate(e) {
@@ -8,11 +8,11 @@ function navigate(e) {
         ? e.keyCode
         : e.which;
     if (keynum == 8) {
-        window.location = "035z" + ".html";
+        window.location = "033e" + ".html";
         return false;
     }
     if (keynum == 13 || keynum == 32) {
-        window.location = "036b" + ".html";
+        window.location = "034" + ".html";
         return false;
     }
     if (keynum == 73 || keynum == 105) {
@@ -26,21 +26,21 @@ function navigate(e) {
 <body onkeypress="return navigate(event)">
 <pre>
 
-
-
-
                               CPAN::Reporter::Smoker
           
-          * still scared?  
+          * Turnkey CPAN Testers smoking
           
-
-
-
-
-
-
-
-
+            * No configuration needed
+          
+            * Tests each distribution as a separate CPAN process 
+              - each distribution has prerequisites satisfied from scratch
+          
+            * Automatically checks for new distributions every twelve hours
+              (configurable)
+          
+            * Continues until interrupted with CTRL-C
+          
+            * Smoke tested modules are NOT installed
 
 
 

@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>018.diff</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "017" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "019" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>
+
+
+
+                           Teach cpan about CPAN::Mini
+
+Our mirror won't do us much good unless we use it:
+ 
+--- /Users/jeff/.cpan/CPAN/MyConfig.pm.a	2009-08-11 21:40:04.000000000 -0700
++++ /Users/jeff/.cpan/CPAN/MyConfig.pm	2009-01-14 19:33:26.000000000 -0800
+@@ -62,3 +62,3 @@
+   'unzip' =&gt; q[/usr/bin/unzip],
+-  'urllist' =&gt; [q[ftp://cpan.thepirtgroup.com/]],
++  'urllist' =&gt; [q[http://localhost/~jeff/CPAN/], q[ftp://cpan.thepirtgroup.com/]],
+   'use_sqlite' =&gt; q[1],
+
+
+
+
+
+
+</pre>
+</body>

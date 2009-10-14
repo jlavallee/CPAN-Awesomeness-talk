@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>031</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "030" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "032" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>                            CPAN::Reporter in action!
+
+DBD-Sybase-1.09/Sybase.xs
+DBD-Sybase-1.09/t/nsql.t
+CPAN: File::Temp loaded ok (v0.22)
+Package came without SIGNATURE
+
+  CPAN.pm: Going to build M/ME/MEWP/DBD-Sybase-1.09.tar.gz
+
+CPAN: CPAN::Reporter loaded ok (v1.1708)
+Please set SYBASE in CONFIG, or set the $SYBASE environment variable at Makefile.PL line 103, &lt;IN&gt; line 44.
+(/usr/local/bin/perl Makefile.PL exited with 512)
+CPAN::Reporter: Makefile.PL result is 'unknown', Stopped with an error.
+CPAN::Reporter: preparing a CPAN Testers report for DBD-Sybase-1.09
+Do you want to review or edit the test report? (yes/no) [no] 
+Do you want to send the report? (yes/no) [yes] no
+CPAN::Reporter: test report will not be sent
+Warning: No success on command[/usr/local/bin/perl Makefile.PL]
+  MEWP/DBD-Sybase-1.09.tar.gz
+  /usr/local/bin/perl Makefile.PL -- NOT OK
+Running make test
+  Make had some problems, won't test
+Running make install
+  Make had some problems, won't install
+Failed during this command:
+ MEWP/DBD-Sybase-1.09.tar.gz                  : writemakefile NO '/usr/local/bin/perl Makefile.PL' returned status 512
+
+cpan[2]&gt;  
+</pre>
+</body>

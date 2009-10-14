@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>011.pl</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "010z" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "012" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>$CPAN::Config = {
+  'applypatch' =&gt; q[],
+  'auto_commit' =&gt; q[1],
+  'build_cache' =&gt; q[10],
+  'build_dir' =&gt; q[/Users/jeff/.cpan/build],
+  'build_dir_reuse' =&gt; q[1],
+  'build_requires_install_policy' =&gt; q[yes],
+  'bzip2' =&gt; q[/usr/bin/bzip2],
+  'cache_metadata' =&gt; q[1],
+  'check_sigs' =&gt; q[1],
+  'colorize_debug' =&gt; q[bold],
+  'colorize_output' =&gt; q[1],
+  'colorize_print' =&gt; q[white],
+  'colorize_warn' =&gt; q[bold],
+  'commandnumber_in_prompt' =&gt; q[1],
+  'connect_to_internet_ok' =&gt; q[0],
+  'cpan_home' =&gt; q[/Users/jeff/.cpan],
+  'curl' =&gt; q[/usr/bin/curl],
+  'dontload_hash' =&gt; {  },
+  'ftp' =&gt; q[/usr/bin/ftp],
+  'ftp_passive' =&gt; q[1],
+  'ftp_proxy' =&gt; q[],
+  'getcwd' =&gt; q[cwd],
+  'gpg' =&gt; q[/usr/local/bin/gpg],
+  'gzip' =&gt; q[/usr/bin/gzip],
+  'halt_on_failure' =&gt; q[0],
+  'histfile' =&gt; q[/Users/jeff/.cpan/histfile],
+  'histsize' =&gt; q[100],
+  'http_proxy' =&gt; q[],
+  'inactivity_timeout' =&gt; q[0],
+  'index_expire' =&gt; q[0.001],
+  'inhibit_startup_message' =&gt; q[0],
+  'keep_source_where' =&gt; q[/Users/jeff/.cpan/sources],
+  'load_module_verbosity' =&gt; q[v],
+  'lynx' =&gt; q[/opt/local/bin/lynx],
+  'make' =&gt; q[/usr/bin/make],
+  'make_arg' =&gt; q[],
+  'make_install_arg' =&gt; q[],
+  'make_install_make_command' =&gt; q[sudo /usr/bin/make],
+  'makepl_arg' =&gt; q[],
+  'mbuild_arg' =&gt; q[],
+  'mbuild_install_arg' =&gt; q[],
+  'mbuild_install_build_command' =&gt; q[sudo ./Build],
+  'mbuildpl_arg' =&gt; q[],
+  'ncftp' =&gt; q[],
+  'ncftpget' =&gt; q[],
+  'no_proxy' =&gt; q[],
+  'pager' =&gt; q[/usr/bin/less],
+  'patch' =&gt; q[/usr/bin/patch],
+  'perl5lib_verbosity' =&gt; q[v],
+  'prefer_installer' =&gt; q[MB],
+  'prefs_dir' =&gt; q[/Users/jeff/.cpan/prefs],
+  'prerequisites_policy' =&gt; q[follow],
+  'scan_cache' =&gt; q[atstart],
+  'shell' =&gt; q[/bin/bash],
+  'show_unparsable_versions' =&gt; q[0],
+  'show_upload_date' =&gt; q[1],
+  'show_zero_versions' =&gt; q[0],
+  'tar' =&gt; q[/usr/bin/tar],
+  'tar_verbosity' =&gt; q[v],
+  'term_is_latin' =&gt; q[0],
+  'term_ornaments' =&gt; q[1],
+  'test_report' =&gt; q[1],
+  'trust_test_report_history' =&gt; q[0],
+  'unzip' =&gt; q[/usr/bin/unzip],
+  'urllist' =&gt; [q[http://localhost/~jeff/CPAN/], q[ftp://cpan.thepirtgroup.com/], q[ftp://cpan.cs.utah.edu/pub/CPAN/], q[ftp://cpan.mirrors.redwire.net/pub/CPAN/]],
+  'use_sqlite' =&gt; q[1],
+  'wget' =&gt; q[/opt/local/bin/wget],
+  'yaml_load_code' =&gt; q[0],
+  'yaml_module' =&gt; q[YAML::Syck],
+};
+1;
+__END__
+</pre>
+</body>

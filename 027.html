@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>027</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "026" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "028" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>                            CPAN::Reporter in action!
+...
+Writing Makefile for Acme::Bleach
+(/usr/local/bin/perl Makefile.PL exited with 0)
+CPAN::Reporter: Makefile.PL result is 'pass', No errors.
+cp lib/Acme/Bleach.pm blib/lib/Acme/Bleach.pm
+cp lib/Acme/Morse.pm blib/lib/Acme/Morse.pm
+cp lib/Acme/DWIM.pm blib/lib/Acme/DWIM.pm
+Manifying blib/man3/Acme::Morse.3
+Manifying blib/man3/Acme::Bleach.3
+Manifying blib/man3/Acme::DWIM.3
+(/usr/bin/make exited with 0)
+CPAN::Reporter: make result is 'pass', No errors.
+  DCONWAY/Acme-Bleach-1.12.tar.gz
+  /usr/bin/make -- OK
+Running make test
+PERL_DL_NONLAZY=1 /usr/local/bin/perl &quot;-MExtUtils::Command::MM&quot; &quot;-e&quot; &quot;test_harness(0, 'blib/lib', 'blib/arch')&quot; t/*.t
+t/bleach....ok
+t/DWIM......ok
+t/morse.....ok
+All tests successful.
+...
+</pre>
+</body>

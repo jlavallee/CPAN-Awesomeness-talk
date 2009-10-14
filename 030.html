@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>030</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "029" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "031" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>                            CPAN::Reporter in action!
+
+Gathering information from index files ...
+Obtaining current state of database ...
+Populating database tables ...
+Done!
+Running install for module 'DBD::Sybase'
+CPAN: CPAN::Kwalify loaded ok (v5.50)
+Running make for M/ME/MEWP/DBD-Sybase-1.09.tar.gz
+CPAN: Digest::SHA loaded ok (v5.47)
+CPAN: Module::Signature loaded ok (v0.55)
+WARNING: This key is not certified with a trusted signature!
+Primary key fingerprint: 2E66 557A B97C 19C7 91AF  8E20 328D A867 450F 89EC
+Signature for /Users/jeff/.cpan/sources/authors/id/M/ME/MEWP/CHECKSUMS ok
+Checksum for /Users/jeff/.cpan/sources/authors/id/M/ME/MEWP/DBD-Sybase-1.09.tar.gz ok
+Scanning cache /Users/jeff/.cpan/build for sizes
+DONE
+CPAN: Archive::Tar loaded ok (v1.54)
+DBD-Sybase-1.09/
+
+...
+</pre>
+</body>

@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>026</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "025z" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "027" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>                            CPAN::Reporter in action!
+
+cpan[1]&gt; install Acme::Bleach                                                             
+CPAN: CPAN::SQLite loaded ok (v0.197)
+...
+Running make for D/DC/DCONWAY/Acme-Bleach-1.12.tar.gz
+CPAN: LWP::UserAgent loaded ok (v5.826)
+Fetching with LWP:
+  http://localhost/~jeff/CPAN/authors/id/D/DC/DCONWAY/Acme-Bleach-1.12.tar.gz
+CPAN: Digest::SHA loaded ok (v5.45)
+...
+
+  CPAN.pm: Going to build D/DC/DCONWAY/Acme-Bleach-1.12.tar.gz
+
+CPAN: CPAN::Reporter loaded ok (v1.1705)
+Checking if your kit is complete...
+Looks good
+...
+
+
+
+</pre>
+</body>

@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>036</title>
+<title>021</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script>
 function navigate(e) {
@@ -8,11 +8,11 @@ function navigate(e) {
         ? e.keyCode
         : e.which;
     if (keynum == 8) {
-        window.location = "035z" + ".html";
+        window.location = "020z" + ".html";
         return false;
     }
     if (keynum == 13 || keynum == 32) {
-        window.location = "036b" + ".html";
+        window.location = "022.yaml" + ".html";
         return false;
     }
     if (keynum == 73 || keynum == 105) {
@@ -25,23 +25,23 @@ function navigate(e) {
 </head>
 <body onkeypress="return navigate(event)">
 <pre>
+                               CPAN::Reporter setup
 
+Enable sending test reports:
 
+cpan[1]&gt; o conf init test_report
+&lt;snip&gt;
 
+ &lt;test_report&gt;
+Email test reports if CPAN::Reporter is installed (yes/no)? [yes] 
 
-                              CPAN::Reporter::Smoker
-          
-          * still scared?  
-          
+CPAN: CPAN::Reporter loaded ok (v1.1708)
 
+Proceeding to configure CPAN::Reporter.
 
+&lt;snip&gt;
 
-
-
-
-
-
-
+  commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
 
 
 

@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>036</title>
+<title>022.yaml</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script>
 function navigate(e) {
@@ -8,11 +8,11 @@ function navigate(e) {
         ? e.keyCode
         : e.which;
     if (keynum == 8) {
-        window.location = "035z" + ".html";
+        window.location = "021" + ".html";
         return false;
     }
     if (keynum == 13 || keynum == 32) {
-        window.location = "036b" + ".html";
+        window.location = "023" + ".html";
         return false;
     }
     if (keynum == 73 || keynum == 105) {
@@ -28,16 +28,16 @@ function navigate(e) {
 
 
 
+                            CPAN::Reporter config.ini
 
-                              CPAN::Reporter::Smoker
-          
-          * still scared?  
-          
-
-
-
-
-
+  
+  jeff@pokey:~ $ cat ~/.cpanreporter/config.ini
+  cc_author=no
+  edit_report=default:ask/no pass/na:no
+  email_from=jeff@zeroclue.com
+  send_report=default:ask/yes pass/na:yes
+  smtp_server=smtp.gmail.com
+  transport=Net::SMTP::TLS User jeff@zeroclue.com Password xxxxxxxxx Port 587
 
 
 

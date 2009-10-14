@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>036</title>
+<title>015.yaml</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script>
 function navigate(e) {
@@ -8,11 +8,11 @@ function navigate(e) {
         ? e.keyCode
         : e.which;
     if (keynum == 8) {
-        window.location = "035z" + ".html";
+        window.location = "014z" + ".html";
         return false;
     }
     if (keynum == 13 || keynum == 32) {
-        window.location = "036b" + ".html";
+        window.location = "016.sh" + ".html";
         return false;
     }
     if (keynum == 73 || keynum == 105) {
@@ -29,14 +29,14 @@ function navigate(e) {
 
 
 
-                              CPAN::Reporter::Smoker
-          
-          * still scared?  
-          
 
+                                 CPAN::Mini setup
 
-
-
+  jeff@pokey:~ $ cat ~/.minicpanrc 
+  local: ~/Sites/CPAN/
+  remote: http://cpan.hexten.net/
+  class: CPAN::Mini
+  also_mirror: indices/find-ls.gz indices/ls-lR.gz authors/00whois.xml
 
 
 

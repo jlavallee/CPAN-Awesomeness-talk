@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>028</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "027" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "029" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>                            CPAN::Reporter in action!
+...
+Files=3, Tests=30,  0 wallclock secs ( 0.03 usr  0.01 sys +  0.02 cusr  0.01 csys =  0.07 CPU)
+Result: PASS
+(/usr/bin/make test exited with 0)
+CPAN::Reporter: Test result is 'pass', All tests successful.
+CPAN::Reporter: preparing a CPAN Testers report for Acme-Bleach-1.12
+CPAN::Reporter: sending test report with 'pass' to cpan-testers@perl.org
+  DCONWAY/Acme-Bleach-1.12.tar.gz
+  /usr/bin/make test -- OK
+Running make install
+Prepending /Users/jeff/.cpan/build/Acme-Bleach-1.12-ogVZun/blib/arch /Users/jeff/.cpan/build/Acme-Bleach-1.12-ogVZun/blib/lib to PERL5LIB for 'install'
+Installing /usr/local/lib/perl5/site_perl/5.10.0/Acme/Bleach.pm
+Installing /usr/local/lib/perl5/site_perl/5.10.0/Acme/DWIM.pm
+Installing /usr/local/lib/perl5/site_perl/5.10.0/Acme/Morse.pm
+Installing /usr/local/share/man/man3/Acme::Bleach.3
+Installing /usr/local/share/man/man3/Acme::DWIM.3
+Installing /usr/local/share/man/man3/Acme::Morse.3
+Appending installation info to /usr/local/lib/perl5/5.10.0/darwin-2level/perllocal.pod
+  DCONWAY/Acme-Bleach-1.12.tar.gz
+  sudo /usr/bin/make install  -- OK
+
+cpan[2]&gt;     
+</pre>
+</body>

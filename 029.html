@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>029</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "028" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "030" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>
+                            CPAN::Reporter in action!
+
+cpan[1]&gt; install DBD::Sybase                                                              
+CPAN: CPAN::SQLite loaded ok (v0.198)
+CPAN: LWP::UserAgent loaded ok (v5.829)
+CPAN: Time::HiRes loaded ok (v1.9719)
+Fetching with LWP:
+  http://localhost/~jeff/CPAN/authors/01mailrc.txt.gz
+CPAN: YAML loaded ok (v0.70)
+Fetching with LWP:
+  http://localhost/~jeff/CPAN/modules/02packages.details.txt.gz
+Fetching with LWP:
+  http://localhost/~jeff/CPAN/modules/03modlist.data.gz
+Database was generated on Wed, 14 Oct 2009 05:10:48 GMT
+Updating database file ...
+
+...
+
+
+
+</pre>
+</body>
