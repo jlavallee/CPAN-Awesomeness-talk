@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>038f</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function navigate(e) {
+    var keynum = (window.event) // IE
+        ? e.keyCode
+        : e.which;
+    if (keynum == 8) {
+        window.location = "038e" + ".html";
+        return false;
+    }
+    if (keynum == 13 || keynum == 32) {
+        window.location = "038z" + ".html";
+        return false;
+    }
+    if (keynum == 73 || keynum == 105) {
+        window.location = "index.html";
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body onkeypress="return navigate(event)">
+<pre>
+
+                                   distroprefs?
+          
+          * CPAN Distroprefs let you give special treatment to particlar modules
+          
+          * examples:
+          
+            * set environment variables (during build/test/install)
+          
+            * override CPAN.pm configuration values
+          
+            * specify dependencies the module author missed
+          
+            * in our case, we generally want to prevent smoke testing altogether
+          
+
+
+
+
+
+</pre>
+</body>

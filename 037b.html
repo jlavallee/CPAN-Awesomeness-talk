@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>037</title>
+<title>037b</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script>
 function navigate(e) {
@@ -8,11 +8,11 @@ function navigate(e) {
         ? e.keyCode
         : e.which;
     if (keynum == 8) {
-        window.location = "036z" + ".html";
+        window.location = "037" + ".html";
         return false;
     }
     if (keynum == 13 || keynum == 32) {
-        window.location = "037b" + ".html";
+        window.location = "037z" + ".html";
         return false;
     }
     if (keynum == 73 || keynum == 105) {
@@ -31,13 +31,13 @@ function navigate(e) {
           
             * You'll reduce load on CPAN mirrors
           
-
-
-
-
-
-
-
+          * You'll need to mirror the CPAN indicies for the smoker
+          
+            * see CPAN::Mini ~/.minicpanrc from earlier
+          
+          * use CPAN.pm &quot;distroprefs&quot; to prevent testing things that 
+            hang your smoker or you know are broken
+          
 
 
 
