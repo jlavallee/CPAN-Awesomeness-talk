@@ -3,7 +3,7 @@
 title: "CPAN::Awesomeness"
 height: 21
 width: 82
-#skip: 20   
+skip: 35
 ---- center
 CPAN::Awesomeness - A hodgepodge of CPAN niftyness
 
@@ -72,7 +72,7 @@ by Jeff Lavallee
 +* or man cpan
 
 +* basic usage:
-* $> cpan Foo::Bar            <---- installs Foo:Bar
+* $> cpan Foo::Bar            <---- installs Foo::Bar
 
 +* CPAN shell
 +* $> cpan                     <---- start the CPAN.pm shell
@@ -118,6 +118,91 @@ by Jeff Lavallee
 +  * cpan[5]> o conf mbuild_install_build_command "sudo ./Build"                               
     mbuild_install_build_command [sudo ./Build]
     commit: wrote '/Users/jeff/.cpan/CPAN/MyConfig.pm'
+
+----
+== CPAN configuration using you favorite text editor
+
+* CPAN keeps configuration data in MyConfig.pm
+  (usually ~/.cpan/CPAN/MyConfig.pm)
+
++* just a big hashref:
+
+---- perl
+
+$CPAN::Config = {
+  'applypatch' => q[],
+  'auto_commit' => q[1],
+  'build_cache' => q[10],
+  'build_dir' => q[/Users/jeff/.cpan/build],
+  'build_dir_reuse' => q[1],
+  'build_requires_install_policy' => q[yes],
+  'bzip2' => q[/usr/bin/bzip2],
+  'cache_metadata' => q[1],
+  'check_sigs' => q[1],
+  'colorize_debug' => q[bold],
+  'colorize_output' => q[1],
+  'colorize_print' => q[white],
+  'colorize_warn' => q[bold],
+  'commandnumber_in_prompt' => q[1],
+  'connect_to_internet_ok' => q[0],
+  'cpan_home' => q[/Users/jeff/.cpan],
+  'curl' => q[/usr/bin/curl],
+  'dontload_hash' => {  },
+  'ftp' => q[/usr/bin/ftp],
+  'ftp_passive' => q[1],
+  'ftp_proxy' => q[],
+  'getcwd' => q[cwd],
+  'gpg' => q[/usr/local/bin/gpg],
+  'gzip' => q[/usr/bin/gzip],
+  'halt_on_failure' => q[0],
+  'histfile' => q[/Users/jeff/.cpan/histfile],
+  'histsize' => q[100],
+  'http_proxy' => q[],
+  'inactivity_timeout' => q[0],
+  'index_expire' => q[0.001],
+  'inhibit_startup_message' => q[0],
+  'keep_source_where' => q[/Users/jeff/.cpan/sources],
+  'load_module_verbosity' => q[v],
+  'lynx' => q[/opt/local/bin/lynx],
+  'make' => q[/usr/bin/make],
+  'make_arg' => q[],
+  'make_install_arg' => q[],
+  'make_install_make_command' => q[sudo /usr/bin/make],
+  'makepl_arg' => q[],
+  'mbuild_arg' => q[],
+  'mbuild_install_arg' => q[],
+  'mbuild_install_build_command' => q[sudo ./Build],
+  'mbuildpl_arg' => q[],
+  'ncftp' => q[],
+  'ncftpget' => q[],
+  'no_proxy' => q[],
+  'pager' => q[/usr/bin/less],
+  'patch' => q[/usr/bin/patch],
+  'perl5lib_verbosity' => q[v],
+  'prefer_installer' => q[MB],
+  'prefs_dir' => q[/Users/jeff/.cpan/prefs],
+  'prerequisites_policy' => q[follow],
+  'scan_cache' => q[atstart],
+  'shell' => q[/bin/bash],
+  'show_unparsable_versions' => q[0],
+  'show_upload_date' => q[1],
+  'show_zero_versions' => q[0],
+  'tar' => q[/usr/bin/tar],
+  'tar_verbosity' => q[v],
+  'term_is_latin' => q[0],
+  'term_ornaments' => q[1],
+  'test_report' => q[1],
+  'trust_test_report_history' => q[0],
+  'unzip' => q[/usr/bin/unzip],
+  'urllist' => [q[http://localhost/~jeff/CPAN/], q[ftp://cpan.thepirtgroup.com/], q[ftp://cpan.cs.utah.edu/pub/CPAN/], q[ftp://cpan.mirrors.redwire.net/pub/CPAN/]],
+  'use_sqlite' => q[1],
+  'wget' => q[/opt/local/bin/wget],
+  'yaml_load_code' => q[0],
+  'yaml_module' => q[YAML::Syck],
+};
+1;
+__END__
+
 
 ----
 == CPAN is Great!
@@ -380,6 +465,79 @@ Appending installation info to /usr/local/lib/perl5/5.10.0/darwin-2level/perlloc
 cpan[2]>     
 
 ----
+== CPAN::Reporter in action!
+
+cpan[1]> install DBD::Sybase                                                              
+CPAN: CPAN::SQLite loaded ok (v0.198)
+CPAN: LWP::UserAgent loaded ok (v5.829)
+CPAN: Time::HiRes loaded ok (v1.9719)
+Fetching with LWP:
+  http://localhost/~jeff/CPAN/authors/01mailrc.txt.gz
+CPAN: YAML loaded ok (v0.70)
+Fetching with LWP:
+  http://localhost/~jeff/CPAN/modules/02packages.details.txt.gz
+Fetching with LWP:
+  http://localhost/~jeff/CPAN/modules/03modlist.data.gz
+Database was generated on Wed, 14 Oct 2009 05:10:48 GMT
+Updating database file ...
+
+...
+
+----
+== CPAN::Reporter in action!
+
+Gathering information from index files ...
+Obtaining current state of database ...
+Populating database tables ...
+Done!
+Running install for module 'DBD::Sybase'
+CPAN: CPAN::Kwalify loaded ok (v5.50)
+Running make for M/ME/MEWP/DBD-Sybase-1.09.tar.gz
+CPAN: Digest::SHA loaded ok (v5.47)
+CPAN: Module::Signature loaded ok (v0.55)
+WARNING: This key is not certified with a trusted signature!
+Primary key fingerprint: 2E66 557A B97C 19C7 91AF  8E20 328D A867 450F 89EC
+Signature for /Users/jeff/.cpan/sources/authors/id/M/ME/MEWP/CHECKSUMS ok
+Checksum for /Users/jeff/.cpan/sources/authors/id/M/ME/MEWP/DBD-Sybase-1.09.tar.gz ok
+Scanning cache /Users/jeff/.cpan/build for sizes
+DONE
+CPAN: Archive::Tar loaded ok (v1.54)
+DBD-Sybase-1.09/
+
+...
+
+----
+== CPAN::Reporter in action!
+
+DBD-Sybase-1.09/Sybase.xs
+DBD-Sybase-1.09/t/nsql.t
+CPAN: File::Temp loaded ok (v0.22)
+Package came without SIGNATURE
+
+  CPAN.pm: Going to build M/ME/MEWP/DBD-Sybase-1.09.tar.gz
+
+CPAN: CPAN::Reporter loaded ok (v1.1708)
+Please set SYBASE in CONFIG, or set the $SYBASE environment variable at Makefile.PL line 103, <IN> line 44.
+(/usr/local/bin/perl Makefile.PL exited with 512)
+CPAN::Reporter: Makefile.PL result is 'unknown', Stopped with an error.
+CPAN::Reporter: preparing a CPAN Testers report for DBD-Sybase-1.09
+Do you want to review or edit the test report? (yes/no) [no] 
+Do you want to send the report? (yes/no) [yes] no
+CPAN::Reporter: test report will not be sent
+Warning: No success on command[/usr/local/bin/perl Makefile.PL]
+  MEWP/DBD-Sybase-1.09.tar.gz
+  /usr/local/bin/perl Makefile.PL -- NOT OK
+Running make test
+  Make had some problems, won't test
+Running make install
+  Make had some problems, won't install
+Failed during this command:
+ MEWP/DBD-Sybase-1.09.tar.gz                  : writemakefile NO '/usr/local/bin/perl Makefile.PL' returned status 512
+
+cpan[2]>  
+
+
+----
 == Awesome!
 
 * we can install CPAN modules w/o running cpan as root
@@ -399,14 +557,15 @@ cpan[2]>
 
 +  * No configuration needed
 
-+  * Tests each distribution as a separate CPAN process -- each
-   distribution has prerequisites like build_requires satisfied from
-   scratch
++  * Tests each distribution as a separate CPAN process 
+    - each distribution has prerequisites satisfied from scratch
 
-+  * Automatically checks for new distributions every twelve hours or as
-   otherwise specified
++  * Automatically checks for new distributions every twelve hours
+    (configurable)
 
 +  * Continues until interrupted with CTRL-C
+
++  * Smoke tested modules are NOT installed
 
 ----
 == CPAN::Reporter::Smoker warning!
@@ -423,7 +582,8 @@ cpan[2]>
 
 * none!
 
-+* that's a lie
++* that's a fib - CPAN::Reporter::Smoker doesn't require much setup,
+  but there are some things I'd recommend
 
 +  * minimum step: run as a dedicated user
 
@@ -461,6 +621,44 @@ cpan[2]>
 +* David Golden's set of distroprefs is a great start:
 
   http://echo.dagolden.com/git/?p=distroprefs.git;a=summary
+
+----
+== distroprefs?
+
+* CPAN Distroprefs let you give special treatment to particlar modules
+
++* examples:
+
++  * set environment variables (during build/test/install)
+
++  * override CPAN.pm configuration values
+
++  * specify dependencies the module author missed
+
++  * in our case, we generally want to prevent smoke testing altogether
+
++ * example from ~/.cpan/prefs/t_hangs.yml:
+
+---- yaml
+--- 
+comment: |
+  Things that hang in tests
+disabled: 1
+match:
+  distribution: |
+    /(?x:
+    .^   # never matches, only purpose is to let things align nicely
+    |Acme-Tests
+    |ApacheBench
+    |App-Control
+    |App-PPBuild          # hangs prompting to rm stuff
+    |Attribute-Persistent # deep recursion
+    |Authen-CyrusSAS
+    # ...
+    |XiaoI
+    |only                 # deep recursion
+    |sitemapper
+    )-v?\d|
 
 ----
 == CPAN::Reporter::Smoker tips
@@ -513,24 +711,6 @@ Running make for R/RJ/RJBS/Email-Stuff-2.100.tar.gz
   CPAN.pm: Going to build R/RJ/RJBS/Email-Stuff-2.100.tar.gz
 
 ----
-== Resources
-
-* http://cpan.org/
-
-* http://search.cpan.org/dist/CPAN-Mini/
-
-* http://search.cpan.org/dist/CPAN-Reporter/
-
-* http://search.cpan.org/dist/CPAN-Reporter-Smoker/
-
-* http://cpantesters.org/
-
-* http://github.com/rjbs/cpan-mini/
-
-* http://echo.dagolden.com/git/?p=distroprefs.git;a=summary
-
-
-----
 == Thanks
 
 * Ingy for Vroom::Vroom, what I used to create this slideshow
@@ -548,7 +728,22 @@ Running make for R/RJ/RJBS/Email-Stuff-2.100.tar.gz
 
 ---- center
 
-The End
+Questions?
 
-is it beer :30 yet?
+----
+== Resources
+
+* http://cpan.org/
+
+* http://search.cpan.org/dist/CPAN-Mini/
+
+* http://search.cpan.org/dist/CPAN-Reporter/
+
+* http://search.cpan.org/dist/CPAN-Reporter-Smoker/
+
+* http://cpantesters.org/
+
+* http://github.com/rjbs/cpan-mini/
+
+* http://echo.dagolden.com/git/?p=distroprefs.git;a=summary
 
